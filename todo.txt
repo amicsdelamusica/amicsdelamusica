@@ -1,0 +1,42 @@
+TABLES
+
+    PARTNERS
+        Name
+        City
+        Street
+        StreetNumber
+        Email
+        Phone
+        ResponsibleMusician
+
+    MUSICIANS
+        Name
+        Surname
+        Email
+        Phone
+
+
+QUERIES
+    -   Listado de socios
+    -   Socios sin músico asignado
+    -   Listado de músicos
+    -   Socios asignados a músico
+
+FEATURES
+    -   Dar de alta, modificar y borrar socios
+    -   Los socios se darán de alta con el número que tienen en la base de datos antigua
+    -   Cuando se borre un socio, su número de socio se borrará también
+    -   No habrá mantenimiento de calles. Se mostrará un desplegable con todas las que hay en la base de datos
+    -   Dar de alta, modificar y borrar músicos
+    -   Cuando se borre un músico, todos los socios que tenga asignados se quedarán sin músico asociado
+
+REPORTS
+    -   Gernerar plantilla altas/bajas
+        Preguntar datos como año (recuperando el actual), fecha límite, cuota, frases de abajo
+        Por defecto aparecerán valores que tendrán un mantenimiento
+    -   Generar recibos para cada músico
+    -   Generar informe que muestre la plantilla de cada músico, los recibos de todos sus socios asignados 
+        y tantas copias de la carta (se seleccionará un PDF con la carta antes de generar el informe) en un
+        único PDF. De este modo, su organización en fundas será muy rápida. Antes de generar el documento, se
+        comprobará que ningún socio esté sin músico asociado. 
+
