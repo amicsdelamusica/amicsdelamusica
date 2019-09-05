@@ -1,14 +1,6 @@
-﻿using AmicsDeLaMusica.Properties;
-using AmicsDeLaMusica.Src.Partner;
+﻿using AmicsDeLaMusica.Src.Partner;
 using AmicsDeLaMusicaClassLibrary.Src.Container;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AmicsDeLaMusica
@@ -22,7 +14,11 @@ namespace AmicsDeLaMusica
 
         private void buttonCollaborator_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Pròximament...");
+            MessageBox.Show(
+                "Pròximament...", 
+                "Informació",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void buttonMusicians_Click(object sender, EventArgs e)

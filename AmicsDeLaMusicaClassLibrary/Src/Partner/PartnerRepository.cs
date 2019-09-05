@@ -26,7 +26,8 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
                     Email, 
                     Phone,
                     Id
-                    FROM PARTNERS";
+                    FROM PARTNERS
+                    ORDER BY Id";
 
             return query;
         }
@@ -74,6 +75,72 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
             return query;
         }
 
+        private string GetNextIdSQL()
+        {
+            string query;
+
+            query = @"SELECT  
+                    MIN(id) + 1 NEXT_ID
+                    FROM    
+                    PARTNERS TABLE1
+                    WHERE   
+                    NOT EXISTS (
+	                    SELECT  NULL
+	                    FROM    
+	                    PARTNERS TABLE2
+	                    WHERE   TABLE2.id = TABLE1.id + 1
+                    ) 
+                    ";
+
+            return query;
+        }
+
+        private string GetInsertSQL(Partner pPartner)
+        {
+            string query;
+
+            query = $@"INSERT INTO [PARTNERS]
+           ([Id]
+           ,[Name]
+           ,[City]
+           ,[Street]
+           ,[StreetNumber]
+           ,[Email]
+           ,[Phone]
+           ,[ResponsibleMusician])
+     VALUES
+           (:Id,
+           :PartnerName,
+           :City,
+           :Street,
+           :StreetNumber,
+           :Email,
+           :Phone,
+           {pPartner.ResponsibleMusician?.Id ?? 0}
+           );";
+
+            return query;
+        }
+
+        private string GetUpdateSQL(Partner pPartner)
+        {
+            string query;
+
+            query = $@"UPDATE [PARTNERS] 
+                       SET 
+                          [Name] = :PartnerName,
+                          [City] = :City,
+                          [Street] = :Street,
+                          [StreetNumber] = :StreetNumber,
+                          [Email] = :Email,
+                          [Phone] = :Phone,
+                          [ResponsibleMusician] = {pPartner.ResponsibleMusician?.Id ?? 0}
+                       WHERE 
+                          Id =:Id;";
+
+            return query;
+        }
+
         #endregion
 
 
@@ -110,12 +177,12 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         void IPartnerRepository.Insert(Partner pPartner)
         {
-            throw new NotImplementedException();
+            _dbService.connection.Execute(GetInsertSQL(pPartner), pPartner);
         }
 
         void IPartnerRepository.Update(Partner pPartner)
         {
-            throw new NotImplementedException();
+            _dbService.connection.Execute(GetUpdateSQL(pPartner), pPartner);
         }
 
         void IPartnerRepository.Delete(Partner pPartner)
@@ -131,6 +198,11 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
         IEnumerable<string> IPartnerRepository.GetStreets()
         {
             return _dbService.connection.Query<string>(GetSQLStreets());
+        }
+
+        public int GetNextId()
+        {
+            return _dbService.connection.Query<int>(GetNextIdSQL()).FirstOrDefault();
         }
     }
 }

@@ -20,5 +20,10 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         public Musician.Musician ResponsibleMusician { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Id} - {PartnerName}";
+        }
+
     }
 }

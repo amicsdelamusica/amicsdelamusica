@@ -27,3 +27,4 @@ C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusica\bin\Debug\SimpleInjector.xml
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusica\obj\Debug\AmicsDeLaMusica.Main.resources
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusica\obj\Debug\AmicsDeLaMusica.Src.Partner.PartnerList.resources
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusica\obj\Debug\AmicsDeLaMusica.Src.Partner.FormNewPartner.resources
+C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusica\obj\Debug\AmicsDeLaMusica.Src.Partner.FormEditPartner.resources

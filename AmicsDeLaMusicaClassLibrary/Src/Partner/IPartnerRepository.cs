@@ -8,6 +8,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
         Partner Find(Partner pPartner);
         bool Exists(Partner pPartner);
         IEnumerable<Partner> FindAll(Partner pPartner);
+        int GetNextId();
 
         IEnumerable<string> GetCities();
         IEnumerable<string> GetStreets();

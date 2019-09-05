@@ -43,8 +43,8 @@
             this.TBPhone = new System.Windows.Forms.TextBox();
             this.CBReponsible = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.ButtonInsert = new System.Windows.Forms.Button();
             this.ButtonExit = new System.Windows.Forms.Button();
+            this.ButtonInsert = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericStreetNumber)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.TBPartnerName.Location = new System.Drawing.Point(166, 16);
             this.TBPartnerName.Margin = new System.Windows.Forms.Padding(4);
             this.TBPartnerName.Name = "TBPartnerName";
-            this.TBPartnerName.Size = new System.Drawing.Size(234, 27);
+            this.TBPartnerName.Size = new System.Drawing.Size(357, 27);
             this.TBPartnerName.TabIndex = 0;
             // 
             // label1
@@ -91,7 +91,7 @@
             this.CBCity.FormattingEnabled = true;
             this.CBCity.Location = new System.Drawing.Point(166, 50);
             this.CBCity.Name = "CBCity";
-            this.CBCity.Size = new System.Drawing.Size(234, 28);
+            this.CBCity.Size = new System.Drawing.Size(357, 28);
             this.CBCity.TabIndex = 4;
             // 
             // CBStreet
@@ -103,7 +103,7 @@
             this.CBStreet.IntegralHeight = false;
             this.CBStreet.Location = new System.Drawing.Point(166, 84);
             this.CBStreet.Name = "CBStreet";
-            this.CBStreet.Size = new System.Drawing.Size(234, 28);
+            this.CBStreet.Size = new System.Drawing.Size(357, 28);
             this.CBStreet.TabIndex = 5;
             // 
             // label4
@@ -120,7 +120,7 @@
             // 
             this.NumericStreetNumber.Location = new System.Drawing.Point(166, 119);
             this.NumericStreetNumber.Name = "NumericStreetNumber";
-            this.NumericStreetNumber.Size = new System.Drawing.Size(234, 27);
+            this.NumericStreetNumber.Size = new System.Drawing.Size(357, 27);
             this.NumericStreetNumber.TabIndex = 7;
             // 
             // label5
@@ -138,7 +138,7 @@
             this.TBEmail.Location = new System.Drawing.Point(166, 153);
             this.TBEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TBEmail.Name = "TBEmail";
-            this.TBEmail.Size = new System.Drawing.Size(234, 27);
+            this.TBEmail.Size = new System.Drawing.Size(357, 27);
             this.TBEmail.TabIndex = 8;
             // 
             // label6
@@ -156,7 +156,7 @@
             this.TBPhone.Location = new System.Drawing.Point(166, 188);
             this.TBPhone.Margin = new System.Windows.Forms.Padding(4);
             this.TBPhone.Name = "TBPhone";
-            this.TBPhone.Size = new System.Drawing.Size(234, 27);
+            this.TBPhone.Size = new System.Drawing.Size(357, 27);
             this.TBPhone.TabIndex = 10;
             // 
             // CBReponsible
@@ -166,7 +166,7 @@
             this.CBReponsible.FormattingEnabled = true;
             this.CBReponsible.Location = new System.Drawing.Point(166, 222);
             this.CBReponsible.Name = "CBReponsible";
-            this.CBReponsible.Size = new System.Drawing.Size(234, 28);
+            this.CBReponsible.Size = new System.Drawing.Size(357, 28);
             this.CBReponsible.TabIndex = 13;
             // 
             // label7
@@ -177,19 +177,6 @@
             this.label7.Size = new System.Drawing.Size(106, 20);
             this.label7.TabIndex = 12;
             this.label7.Text = "Responsable";
-            // 
-            // ButtonInsert
-            // 
-            this.ButtonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonInsert.Image = ((System.Drawing.Image)(resources.GetObject("ButtonInsert.Image")));
-            this.ButtonInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonInsert.Location = new System.Drawing.Point(245, 271);
-            this.ButtonInsert.Name = "ButtonInsert";
-            this.ButtonInsert.Size = new System.Drawing.Size(155, 48);
-            this.ButtonInsert.TabIndex = 14;
-            this.ButtonInsert.Text = "AFEGIR";
-            this.ButtonInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonInsert.UseVisualStyleBackColor = true;
             // 
             // ButtonExit
             // 
@@ -206,12 +193,26 @@
             this.ButtonExit.UseVisualStyleBackColor = true;
             this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
+            // ButtonInsert
+            // 
+            this.ButtonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonInsert.Image = ((System.Drawing.Image)(resources.GetObject("ButtonInsert.Image")));
+            this.ButtonInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonInsert.Location = new System.Drawing.Point(368, 271);
+            this.ButtonInsert.Name = "ButtonInsert";
+            this.ButtonInsert.Size = new System.Drawing.Size(155, 48);
+            this.ButtonInsert.TabIndex = 14;
+            this.ButtonInsert.Text = "AFEGIR";
+            this.ButtonInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonInsert.UseVisualStyleBackColor = true;
+            this.ButtonInsert.Click += new System.EventHandler(this.ButtonInsert_Click);
+            // 
             // FormNewPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ButtonExit;
-            this.ClientSize = new System.Drawing.Size(417, 331);
+            this.ClientSize = new System.Drawing.Size(536, 331);
             this.Controls.Add(this.ButtonExit);
             this.Controls.Add(this.ButtonInsert);
             this.Controls.Add(this.CBReponsible);

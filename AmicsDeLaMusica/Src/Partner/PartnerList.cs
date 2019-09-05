@@ -2,7 +2,6 @@
 using AmicsDeLaMusicaClassLibrary.Src.Partner;
 using System;
 using System.Windows.Forms;
-using SimpleInjector;
 
 namespace AmicsDeLaMusica.Src.Partner
 {
@@ -22,17 +21,32 @@ namespace AmicsDeLaMusica.Src.Partner
         private void PartnerList_Load(object sender, EventArgs e)
         {
             DGVPartners.AutoGenerateColumns = false;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             DGVPartners.DataSource = _partnerService.FindAll(null);
         }
 
         private void ButtonInsert_Click(object sender, EventArgs e)
         {
             AppContainer.GetInstance().GetInstance<FormNewPartner>().ShowDialog();
+
+            LoadData();
+
         }
 
         private void ButtonUpdate_Click(object sender, EventArgs e)
         {
 
+            FormEditPartner form = AppContainer.GetInstance().GetInstance<FormEditPartner>();
+
+            form.SetPartner((AmicsDeLaMusicaClassLibrary.Src.Partner.Partner) DGVPartners.CurrentRow.DataBoundItem);
+
+            form.ShowDialog();
+
+            LoadData();
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
@@ -64,6 +78,8 @@ namespace AmicsDeLaMusica.Src.Partner
                             "Informació",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+
+                        LoadData();
 
                     }
                  

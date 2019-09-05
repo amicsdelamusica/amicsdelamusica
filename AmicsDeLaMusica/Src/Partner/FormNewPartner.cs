@@ -1,12 +1,6 @@
 ﻿using AmicsDeLaMusicaClassLibrary.Src.Partner;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AmicsDeLaMusica.Src.Partner
@@ -14,13 +8,13 @@ namespace AmicsDeLaMusica.Src.Partner
     public partial class FormNewPartner : Form
     {
 
-        private IPartnerService _parnerService;
+        private IPartnerService _partnerService;
 
         public FormNewPartner(IPartnerService pPartnerService)
         {
             InitializeComponent();
 
-            _parnerService = pPartnerService;
+            _partnerService = pPartnerService;
         }
 
         private void FormNewPartner_Load(object sender, EventArgs e)
@@ -29,8 +23,8 @@ namespace AmicsDeLaMusica.Src.Partner
             AutoCompleteStringCollection _citiesSource = new AutoCompleteStringCollection();
             AutoCompleteStringCollection _streetsSource = new AutoCompleteStringCollection();
 
-            _citiesSource.AddRange(_parnerService.GetCities().ToArray());
-            _streetsSource.AddRange(_parnerService.GetStreets().ToArray());
+            _citiesSource.AddRange(_partnerService.GetCities().ToArray());
+            _streetsSource.AddRange(_partnerService.GetStreets().ToArray());
 
             CBCity.AutoCompleteCustomSource = _citiesSource;
             CBCity.DataSource = _citiesSource;
@@ -45,6 +39,47 @@ namespace AmicsDeLaMusica.Src.Partner
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void ButtonInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _partnerService.Insert(GetPartnerFromForm());
+
+                MessageBox.Show(
+                    "Soci creat correctament", 
+                    "Informació", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
+
+                Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, 
+                    "Error", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+            }
+
+        }
+
+        private AmicsDeLaMusicaClassLibrary.Src.Partner.Partner GetPartnerFromForm()
+        {
+
+            return new AmicsDeLaMusicaClassLibrary.Src.Partner.Partner
+            {
+                PartnerName = TBPartnerName.Text.Trim(),
+                City = CBCity.Text,
+                Street = CBStreet.Text,
+                StreetNumber = NumericStreetNumber.Value.ToString(),
+                Email = TBEmail.Text.Trim(),
+                Phone = TBPhone.Text.Trim(),
+                ResponsibleMusician = (AmicsDeLaMusicaClassLibrary.Src.Musician.Musician)CBReponsible.SelectedItem
+            };
+
         }
     }
 }

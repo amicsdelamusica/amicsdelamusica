@@ -70,17 +70,20 @@ namespace AmicsDeLaMusicaClassLibrary.src.Partner
 
         void IPartnerService.Insert(Src.Partner.Partner pPartner)
         {
-            throw new System.NotImplementedException();
+
+            pPartner.Id = _repository.GetNextId();
+            _repository.Insert(pPartner);
+
         }
 
         void IPartnerService.Update(Src.Partner.Partner pPartner)
         {
-            throw new System.NotImplementedException();
+            _repository.Update(pPartner);
         }
 
         void IPartnerService.Delete(Src.Partner.Partner pPartner)
         {
-            throw new System.NotImplementedException();
+            _repository.Delete(pPartner);
         }
     }
 }
