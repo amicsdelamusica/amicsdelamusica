@@ -12,6 +12,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         IEnumerable<string> GetCities();
         IEnumerable<string> GetStreets();
+        IEnumerable<string> GetResponsibleMusicians();
 
         void Insert(Partner pPartner);
         void Update(Partner pPartner);

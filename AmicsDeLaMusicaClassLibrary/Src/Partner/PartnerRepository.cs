@@ -25,8 +25,12 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
                     StreetNumber, 
                     Email, 
                     Phone,
-                    Id
-                    FROM PARTNERS
+                    ResponsibleMusician
+                    FROM 
+                    PARTNERS
+                    WHERE
+                    Name LIKE '%' || :PartnerName || '%'
+                    AND ResponsibleMusician LIKE '%' || :ResponsibleMusician || '%'
                     ORDER BY Id";
 
             return query;
@@ -75,6 +79,21 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
             return query;
         }
 
+        private string GetSQLResponsibleMusicians()
+        {
+            string query;
+
+            query = @"SELECT DISTINCT
+                    RESPONSIBLEMUSICIAN
+                    FROM 
+                    PARTNERS
+                    WHERE
+                    NOT (RESPONSIBLEMUSICIAN IS NULL OR RESPONSIBLEMUSICIAN = '')
+                    ORDER BY RESPONSIBLEMUSICIAN";
+
+            return query;
+        }
+
         private string GetNextIdSQL()
         {
             string query;
@@ -116,7 +135,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
            :StreetNumber,
            :Email,
            :Phone,
-           {pPartner.ResponsibleMusician?.Id ?? 0}
+           :ResponsibleMusician
            );";
 
             return query;
@@ -134,7 +153,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
                           [StreetNumber] = :StreetNumber,
                           [Email] = :Email,
                           [Phone] = :Phone,
-                          [ResponsibleMusician] = {pPartner.ResponsibleMusician?.Id ?? 0}
+                          [ResponsibleMusician] = :ResponsibleMusician
                        WHERE 
                           Id =:Id;";
 
@@ -153,16 +172,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         IEnumerable<Partner> IPartnerRepository.FindAll(Partner pPartner)
         {
-            return _dbService.connection.Query<Partner, 
-                Musician.Musician, Partner>(GetSQLFindAllPartners(), MapPartner, pPartner);
-        }
-
-        private Partner MapPartner(Partner pPartner, Musician.Musician pMusician)
-        {
-            pPartner.ResponsibleMusician = pMusician;
-
-            return pPartner;
-
+            return _dbService.connection.Query<Partner>(GetSQLFindAllPartners(), pPartner);
         }
 
         Partner IPartnerRepository.Find(Partner pPartner)
@@ -200,9 +210,15 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
             return _dbService.connection.Query<string>(GetSQLStreets());
         }
 
+        IEnumerable<string> IPartnerRepository.GetResponsibleMusicians()
+        {
+            return _dbService.connection.Query<string>(GetSQLResponsibleMusicians());
+        }
+
         public int GetNextId()
         {
             return _dbService.connection.Query<int>(GetNextIdSQL()).FirstOrDefault();
         }
+
     }
 }

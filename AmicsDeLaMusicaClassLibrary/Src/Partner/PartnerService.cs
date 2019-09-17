@@ -68,6 +68,11 @@ namespace AmicsDeLaMusicaClassLibrary.src.Partner
             return _repository.GetStreets();
         }
 
+        public IEnumerable<string> GetResponsibleMusicians()
+        {
+            return _repository.GetResponsibleMusicians();
+        }
+
         void IPartnerService.Insert(Src.Partner.Partner pPartner)
         {
 
@@ -85,5 +90,6 @@ namespace AmicsDeLaMusicaClassLibrary.src.Partner
         {
             _repository.Delete(pPartner);
         }
+
     }
 }

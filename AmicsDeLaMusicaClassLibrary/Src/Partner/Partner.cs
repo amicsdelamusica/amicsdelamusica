@@ -18,7 +18,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         public string Phone { get; set; }
 
-        public Musician.Musician ResponsibleMusician { get; set; }
+        public string ResponsibleMusician { get; set; }
 
         public override string ToString()
         {

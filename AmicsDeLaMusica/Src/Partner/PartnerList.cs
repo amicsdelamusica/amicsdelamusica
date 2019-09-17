@@ -24,9 +24,25 @@ namespace AmicsDeLaMusica.Src.Partner
             LoadData();
         }
 
+        private void ButtonFind_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         private void LoadData()
         {
-            DGVPartners.DataSource = _partnerService.FindAll(null);
+            DGVPartners.DataSource = _partnerService.FindAll(GetPartnerFromForm());
+        }
+
+        private AmicsDeLaMusicaClassLibrary.Src.Partner.Partner GetPartnerFromForm()
+        {
+
+            return new AmicsDeLaMusicaClassLibrary.Src.Partner.Partner
+            {
+                PartnerName = TBPartnerName.Text.Trim(),
+                ResponsibleMusician = TBResponsibleMusician.Text.Trim(),
+            };
+
         }
 
         private void ButtonInsert_Click(object sender, EventArgs e)
@@ -40,13 +56,18 @@ namespace AmicsDeLaMusica.Src.Partner
         private void ButtonUpdate_Click(object sender, EventArgs e)
         {
 
-            FormEditPartner form = AppContainer.GetInstance().GetInstance<FormEditPartner>();
+            if (DGVPartners.CurrentRow != null)
+            {
 
-            form.SetPartner((AmicsDeLaMusicaClassLibrary.Src.Partner.Partner) DGVPartners.CurrentRow.DataBoundItem);
+                FormEditPartner form = AppContainer.GetInstance().GetInstance<FormEditPartner>();
 
-            form.ShowDialog();
+                form.SetPartner((AmicsDeLaMusicaClassLibrary.Src.Partner.Partner) DGVPartners.CurrentRow.DataBoundItem);
 
-            LoadData();
+                form.ShowDialog();
+
+                LoadData();
+
+            }
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
@@ -100,6 +121,11 @@ namespace AmicsDeLaMusica.Src.Partner
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void DGVPartners_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ButtonUpdate.PerformClick();
         }
     }
 }

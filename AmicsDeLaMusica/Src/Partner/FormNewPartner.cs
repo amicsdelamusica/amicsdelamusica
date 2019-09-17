@@ -22,17 +22,23 @@ namespace AmicsDeLaMusica.Src.Partner
 
             AutoCompleteStringCollection _citiesSource = new AutoCompleteStringCollection();
             AutoCompleteStringCollection _streetsSource = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection _responsibleMusiciansSource = new AutoCompleteStringCollection();
 
             _citiesSource.AddRange(_partnerService.GetCities().ToArray());
             _streetsSource.AddRange(_partnerService.GetStreets().ToArray());
+            _responsibleMusiciansSource.AddRange(_partnerService.GetResponsibleMusicians().ToArray());
 
             CBCity.AutoCompleteCustomSource = _citiesSource;
             CBCity.DataSource = _citiesSource;
             CBCity.SelectedIndex = -1;
 
-            CBStreet.AutoCompleteCustomSource = _citiesSource;
+            CBStreet.AutoCompleteCustomSource = _streetsSource;
             CBStreet.DataSource = _streetsSource;
             CBStreet.SelectedIndex = -1;
+
+            CBReponsible.AutoCompleteCustomSource = _responsibleMusiciansSource;
+            CBReponsible.DataSource = _responsibleMusiciansSource;
+            CBReponsible.SelectedIndex = -1;
 
         }
 
@@ -77,7 +83,7 @@ namespace AmicsDeLaMusica.Src.Partner
                 StreetNumber = NumericStreetNumber.Value.ToString(),
                 Email = TBEmail.Text.Trim(),
                 Phone = TBPhone.Text.Trim(),
-                ResponsibleMusician = (AmicsDeLaMusicaClassLibrary.Src.Musician.Musician)CBReponsible.SelectedItem
+                ResponsibleMusician = CBReponsible.Text
             };
 
         }

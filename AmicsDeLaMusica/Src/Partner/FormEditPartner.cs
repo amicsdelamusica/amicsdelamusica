@@ -30,17 +30,23 @@ namespace AmicsDeLaMusica.Src.Partner
 
             AutoCompleteStringCollection _citiesSource = new AutoCompleteStringCollection();
             AutoCompleteStringCollection _streetsSource = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection _responsibleMusiciansSource = new AutoCompleteStringCollection();
 
             _citiesSource.AddRange(_partnerService.GetCities().ToArray());
             _streetsSource.AddRange(_partnerService.GetStreets().ToArray());
+            _responsibleMusiciansSource.AddRange(_partnerService.GetResponsibleMusicians().ToArray());
 
             CBCity.AutoCompleteCustomSource = _citiesSource;
             CBCity.DataSource = _citiesSource;
             CBCity.SelectedIndex = -1;
 
-            CBStreet.AutoCompleteCustomSource = _citiesSource;
+            CBStreet.AutoCompleteCustomSource = _streetsSource;
             CBStreet.DataSource = _streetsSource;
             CBStreet.SelectedIndex = -1;
+
+            CBReponsible.AutoCompleteCustomSource = _responsibleMusiciansSource;
+            CBReponsible.DataSource = _responsibleMusiciansSource;
+            CBReponsible.SelectedIndex = -1;
 
             TBPartnerName.Text = partner.PartnerName;
             CBCity.SelectedText = partner.City;
@@ -48,7 +54,7 @@ namespace AmicsDeLaMusica.Src.Partner
             NumericStreetNumber.Value = String.IsNullOrWhiteSpace(partner.StreetNumber) ? 0 : Convert.ToInt32(partner.StreetNumber);
             TBEmail.Text = partner.Email;
             TBPhone.Text = partner.Phone;
-            CBReponsible.SelectedValue = partner.ResponsibleMusician;
+            CBReponsible.SelectedText = partner.ResponsibleMusician;
                 
         }
 
@@ -85,7 +91,7 @@ namespace AmicsDeLaMusica.Src.Partner
             partner.StreetNumber = NumericStreetNumber.Value.ToString();
             partner.Email = TBEmail.Text.Trim();
             partner.Phone = TBPhone.Text.Trim();
-            partner.ResponsibleMusician = (AmicsDeLaMusicaClassLibrary.Src.Musician.Musician)CBReponsible.SelectedItem;
+            partner.ResponsibleMusician = CBReponsible.Text;
       
             return partner;
 
