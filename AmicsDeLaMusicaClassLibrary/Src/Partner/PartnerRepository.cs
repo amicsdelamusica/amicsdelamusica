@@ -1,6 +1,4 @@
-﻿using AmicsDeLaMusicaClassLibrary.Src.Musician;
-using AmicsDeLaMusicaClassLibrary.Src.DataBase;
-using AmicsDeLaMusicaClassLibrary.Src.Partner;
+﻿using AmicsDeLaMusicaClassLibrary.Src.DataBase;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -114,7 +112,49 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
             return query;
         }
 
-        private string GetInsertSQL(Partner pPartner)
+        private string GetMaxSQL()
+        {
+            string query;
+
+            query = @"
+                    SELECT
+                    Id, 
+                    Name PartnerName, 
+                    City, 
+                    Street, 
+                    StreetNumber, 
+                    Email, 
+                    Phone,
+                    ResponsibleMusician                    
+                    FROM 
+                    PARTNERS
+                    WHERE
+                    Id = (
+                        SELECT 
+                        MAX(Id)
+                        FROM 
+                        PARTNERS
+                    )";
+
+            return query;
+        }
+
+        private string GetPartnerWithoutResponsibleMusicianSQL()
+        {
+            string query;
+
+            query = @"SELECT 
+                    Id, 
+                    Name PartnerName
+                    FROM 
+                    PARTNERS
+                    WHERE
+                    RESPONSIBLEMUSICIAN IS NULL OR RESPONSIBLEMUSICIAN = ''";
+
+            return query;
+        }
+
+        private string GetInsertSQL()
         {
             string query;
 
@@ -141,12 +181,13 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
             return query;
         }
 
-        private string GetUpdateSQL(Partner pPartner)
+        private string GetUpdateSQL()
         {
             string query;
 
             query = $@"UPDATE [PARTNERS] 
                        SET 
+                          [Id] = :Id,
                           [Name] = :PartnerName,
                           [City] = :City,
                           [Street] = :Street,
@@ -154,6 +195,19 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
                           [Email] = :Email,
                           [Phone] = :Phone,
                           [ResponsibleMusician] = :ResponsibleMusician
+                       WHERE 
+                          Id =:Id;";
+
+            return query;
+        }
+
+        private string GetUpdateIDSQL(int pNewID)
+        {
+            string query;
+
+            query = $@"UPDATE [PARTNERS] 
+                       SET 
+                          [Id] = {pNewID}
                        WHERE 
                           Id =:Id;";
 
@@ -187,12 +241,17 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         void IPartnerRepository.Insert(Partner pPartner)
         {
-            _dbService.connection.Execute(GetInsertSQL(pPartner), pPartner);
+            _dbService.connection.Execute(GetInsertSQL(), pPartner);
         }
 
         void IPartnerRepository.Update(Partner pPartner)
         {
-            _dbService.connection.Execute(GetUpdateSQL(pPartner), pPartner);
+            _dbService.connection.Execute(GetUpdateSQL(), pPartner);
+        }
+
+        public void UpdateID(Partner pPartner, int pNewID)
+        {
+            _dbService.connection.Execute(GetUpdateIDSQL(pNewID), pPartner);
         }
 
         void IPartnerRepository.Delete(Partner pPartner)
@@ -218,6 +277,21 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
         public int GetNextId()
         {
             return _dbService.connection.Query<int>(GetNextIdSQL()).FirstOrDefault();
+        }
+
+        public bool HasGap()
+        {
+           return GetNextId() - 1 != MaxPartner().Id;
+        }
+
+        public IEnumerable<Partner> FindAllWithoutResponsibleMusician()
+        {
+          return _dbService.connection.Query<Partner>(GetPartnerWithoutResponsibleMusicianSQL());
+        }
+
+        public Partner MaxPartner()
+        {
+            return _dbService.connection.Query<Partner>(GetMaxSQL()).FirstOrDefault();
         }
 
     }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartnerList));
             this.DGVPartners = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +50,7 @@
             this.TBResponsibleMusician = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ButtonFind = new System.Windows.Forms.Button();
+            this.ButtonValidate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPartners)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,14 +62,14 @@
             this.DGVPartners.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVPartners.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVPartners.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DGVPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVPartners.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -77,14 +78,14 @@
             this.Street,
             this.StreetNumber,
             this.ResponsibleMusician});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVPartners.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVPartners.DefaultCellStyle = dataGridViewCellStyle12;
             this.DGVPartners.Location = new System.Drawing.Point(12, 138);
             this.DGVPartners.Name = "DGVPartners";
             this.DGVPartners.ReadOnly = true;
@@ -99,8 +100,8 @@
             // 
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.ID.DataPropertyName = "ID";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle10;
             this.ID.HeaderText = "#";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -137,8 +138,8 @@
             // 
             this.StreetNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.StreetNumber.DataPropertyName = "StreetNumber";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.StreetNumber.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.StreetNumber.DefaultCellStyle = dataGridViewCellStyle11;
             this.StreetNumber.HeaderText = "Nº";
             this.StreetNumber.Name = "StreetNumber";
             this.StreetNumber.ReadOnly = true;
@@ -201,7 +202,7 @@
             this.ButtonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDelete.Image")));
             this.ButtonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonDelete.Location = new System.Drawing.Point(652, 555);
+            this.ButtonDelete.Location = new System.Drawing.Point(330, 555);
             this.ButtonDelete.Name = "ButtonDelete";
             this.ButtonDelete.Size = new System.Drawing.Size(155, 48);
             this.ButtonDelete.TabIndex = 4;
@@ -272,10 +273,25 @@
             this.ButtonFind.Name = "ButtonFind";
             this.ButtonFind.Size = new System.Drawing.Size(155, 48);
             this.ButtonFind.TabIndex = 10;
-            this.ButtonFind.Text = "AFEGIR";
+            this.ButtonFind.Text = "BUSCAR";
             this.ButtonFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonFind.UseVisualStyleBackColor = true;
             this.ButtonFind.Click += new System.EventHandler(this.ButtonFind_Click);
+            // 
+            // ButtonValidate
+            // 
+            this.ButtonValidate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonValidate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonValidate.Image = ((System.Drawing.Image)(resources.GetObject("ButtonValidate.Image")));
+            this.ButtonValidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonValidate.Location = new System.Drawing.Point(652, 555);
+            this.ButtonValidate.Name = "ButtonValidate";
+            this.ButtonValidate.Size = new System.Drawing.Size(155, 48);
+            this.ButtonValidate.TabIndex = 11;
+            this.ButtonValidate.Text = "VALIDAR";
+            this.ButtonValidate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonValidate.UseVisualStyleBackColor = true;
+            this.ButtonValidate.Click += new System.EventHandler(this.ButtonValidate_Click);
             // 
             // PartnerList
             // 
@@ -284,6 +300,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ButtonExit;
             this.ClientSize = new System.Drawing.Size(1141, 615);
+            this.Controls.Add(this.ButtonValidate);
             this.Controls.Add(this.ButtonFind);
             this.Controls.Add(this.TBResponsibleMusician);
             this.Controls.Add(this.label3);
@@ -325,5 +342,6 @@
         private System.Windows.Forms.TextBox TBResponsibleMusician;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ButtonFind;
+        private System.Windows.Forms.Button ButtonValidate;
     }
 }

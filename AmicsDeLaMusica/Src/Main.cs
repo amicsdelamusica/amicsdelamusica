@@ -23,7 +23,11 @@ namespace AmicsDeLaMusica
 
         private void buttonMusicians_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(
+                "Pròximament...",
+                "Informació",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void buttonPartners_Click(object sender, EventArgs e)

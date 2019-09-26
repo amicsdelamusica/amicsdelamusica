@@ -56,7 +56,7 @@
             this.CBReponsible.Location = new System.Drawing.Point(168, 220);
             this.CBReponsible.Name = "CBReponsible";
             this.CBReponsible.Size = new System.Drawing.Size(355, 28);
-            this.CBReponsible.TabIndex = 29;
+            this.CBReponsible.TabIndex = 1;
             // 
             // label7
             // 
@@ -200,7 +200,7 @@
             this.ButtonEdit.Location = new System.Drawing.Point(368, 269);
             this.ButtonEdit.Name = "ButtonEdit";
             this.ButtonEdit.Size = new System.Drawing.Size(155, 48);
-            this.ButtonEdit.TabIndex = 30;
+            this.ButtonEdit.TabIndex = 2;
             this.ButtonEdit.Text = "EDITAR";
             this.ButtonEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonEdit.UseVisualStyleBackColor = true;
@@ -229,8 +229,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBPartnerName);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormEditPartner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar soci";

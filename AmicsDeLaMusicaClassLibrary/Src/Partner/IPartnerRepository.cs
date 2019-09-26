@@ -10,12 +10,17 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
         IEnumerable<Partner> FindAll(Partner pPartner);
         int GetNextId();
 
+        bool HasGap();
+        IEnumerable<Partner> FindAllWithoutResponsibleMusician();
+        Partner MaxPartner();
+
         IEnumerable<string> GetCities();
         IEnumerable<string> GetStreets();
         IEnumerable<string> GetResponsibleMusicians();
 
         void Insert(Partner pPartner);
         void Update(Partner pPartner);
+        void UpdateID(Partner pPartner, int pNewID);
         void Delete(Partner pPartner);
 
     }

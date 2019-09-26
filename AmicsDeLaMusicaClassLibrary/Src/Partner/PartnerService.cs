@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AmicsDeLaMusicaClassLibrary.Src.Partner;
 
 namespace AmicsDeLaMusicaClassLibrary.src.Partner
@@ -26,6 +27,12 @@ namespace AmicsDeLaMusicaClassLibrary.src.Partner
         public IEnumerable<Src.Partner.Partner> FindAll(Src.Partner.Partner pPartner)
         {
             return _repository.FindAll(pPartner);
+        }
+
+        public bool Validate()
+        {
+            //return !(HasGap() || FindAllWithoutResponsibleMusician().Count() > 0);
+            return !(_repository.HasGap());
         }
 
         public void Insert(Src.Partner.Partner pPartner)
@@ -86,9 +93,34 @@ namespace AmicsDeLaMusicaClassLibrary.src.Partner
             _repository.Update(pPartner);
         }
 
+        public void UpdateID(Src.Partner.Partner pPartner, int pNewID)
+        {
+            _repository.UpdateID(pPartner, pNewID);
+        }
+
         void IPartnerService.Delete(Src.Partner.Partner pPartner)
         {
             _repository.Delete(pPartner);
+        }
+
+        public IEnumerable<Src.Partner.Partner> FindAllWithoutResponsibleMusician()
+        {
+            return _repository.FindAllWithoutResponsibleMusician();
+        }
+
+        public bool HasGap()
+        {
+            return _repository.HasGap();
+        }
+
+        public Src.Partner.Partner MaxPartner()
+        {
+            return _repository.MaxPartner();
+        }
+
+        public int GetNextId()
+        {
+            return _repository.GetNextId();
         }
 
     }

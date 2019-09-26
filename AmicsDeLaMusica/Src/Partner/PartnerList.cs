@@ -1,7 +1,9 @@
 ﻿using AmicsDeLaMusicaClassLibrary.Src.Container;
 using AmicsDeLaMusicaClassLibrary.Src.Partner;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace AmicsDeLaMusica.Src.Partner
 {
@@ -126,6 +128,102 @@ namespace AmicsDeLaMusica.Src.Partner
         private void DGVPartners_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ButtonUpdate.PerformClick();
+        }
+
+        private void ButtonValidate_Click(object sender, EventArgs e)
+        {
+
+            IEnumerable<AmicsDeLaMusicaClassLibrary.Src.Partner.Partner> _partnersWithoutResponsibleMusician;
+            string _errorMessage = string.Empty;
+            string _confirmationMessage = string.Empty;
+            AmicsDeLaMusicaClassLibrary.Src.Partner.Partner _lastPartner;
+            int _gapPartnerID;
+            DialogResult _result;
+
+            if (_partnerService.Validate()){
+                MessageBox.Show(
+                    "La informació dels socis és correcta!",
+                    "Informació",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                MessageBox.Show(
+                    "La informació dels socis NO és correcta.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                _partnersWithoutResponsibleMusician = _partnerService.FindAllWithoutResponsibleMusician();
+
+                if (_partnersWithoutResponsibleMusician.Count() > 0)
+                {
+
+                    _errorMessage += "Assigna músic responsable als següents socis:\n\n";
+
+                    foreach (var _partner in _partnersWithoutResponsibleMusician)
+                    {
+                        _errorMessage += _partner.ToString() + "\n";
+                    }
+
+                    MessageBox.Show(
+                        _errorMessage,
+                        "Informació",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                }
+
+                if (_partnerService.HasGap())
+                {
+
+                    _lastPartner = _partnerService.MaxPartner();
+                    _gapPartnerID = _partnerService.GetNextId();
+
+                    _confirmationMessage = "N'hi ha llocs en blanc entre els socis.\n\n";
+                    _confirmationMessage += $"Vols moure el soci {_lastPartner.ToString()} al lloc {_gapPartnerID}?";
+
+                    _result = MessageBox.Show(
+                      _confirmationMessage,
+                      "Confirmació",
+                      MessageBoxButtons.YesNo,
+                      MessageBoxIcon.Question);
+
+                    if(_result == DialogResult.Yes)
+                    {
+
+                        try
+                        {
+
+                            _partnerService.UpdateID(_lastPartner, _gapPartnerID);
+
+                            MessageBox.Show(
+                                "Soci editat correctament",
+                                "Informació",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+
+                            LoadData();
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show(
+                                ex.Message,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+
+                    }
+
+                }
+
+            }
+
         }
     }
 }

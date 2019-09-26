@@ -8,6 +8,13 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
         Partner Find(Partner pPartner);
         bool Exists(Partner pPartner);
         IEnumerable<Partner> FindAll(Partner pPartner);
+        int GetNextId();
+
+        bool Validate();
+
+        bool HasGap();
+        IEnumerable<Partner> FindAllWithoutResponsibleMusician();
+        Partner MaxPartner();
 
         IEnumerable<string> GetCities();
         IEnumerable<string> GetStreets();
@@ -15,6 +22,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         void Insert(Partner pPartner);
         void Update(Partner pPartner);
+        void UpdateID(Partner pPartner, int pNewID);
         void Delete(Partner pPartner);
 
     }
