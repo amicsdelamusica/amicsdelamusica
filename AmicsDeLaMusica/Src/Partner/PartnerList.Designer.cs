@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartnerList));
             this.DGVPartners = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,16 +41,17 @@
             this.StreetNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResponsibleMusician = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.ButtonInsert = new System.Windows.Forms.Button();
-            this.ButtonUpdate = new System.Windows.Forms.Button();
-            this.ButtonDelete = new System.Windows.Forms.Button();
-            this.ButtonExit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TBPartnerName = new System.Windows.Forms.TextBox();
             this.TBResponsibleMusician = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ButtonFind = new System.Windows.Forms.Button();
+            this.ButtonExit = new System.Windows.Forms.Button();
+            this.ButtonReports = new System.Windows.Forms.Button();
             this.ButtonValidate = new System.Windows.Forms.Button();
+            this.ButtonDelete = new System.Windows.Forms.Button();
+            this.ButtonUpdate = new System.Windows.Forms.Button();
+            this.ButtonInsert = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPartners)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,14 +63,14 @@
             this.DGVPartners.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVPartners.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVPartners.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVPartners.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -78,14 +79,14 @@
             this.Street,
             this.StreetNumber,
             this.ResponsibleMusician});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVPartners.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVPartners.DefaultCellStyle = dataGridViewCellStyle4;
             this.DGVPartners.Location = new System.Drawing.Point(12, 138);
             this.DGVPartners.Name = "DGVPartners";
             this.DGVPartners.ReadOnly = true;
@@ -100,8 +101,8 @@
             // 
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.ID.DataPropertyName = "ID";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle2;
             this.ID.HeaderText = "#";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -138,8 +139,8 @@
             // 
             this.StreetNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.StreetNumber.DataPropertyName = "StreetNumber";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.StreetNumber.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.StreetNumber.DefaultCellStyle = dataGridViewCellStyle3;
             this.StreetNumber.HeaderText = "Nº";
             this.StreetNumber.Name = "StreetNumber";
             this.StreetNumber.ReadOnly = true;
@@ -165,67 +166,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "LLISTAT DE SOCIS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ButtonInsert
-            // 
-            this.ButtonInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonInsert.Image = ((System.Drawing.Image)(resources.GetObject("ButtonInsert.Image")));
-            this.ButtonInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonInsert.Location = new System.Drawing.Point(974, 555);
-            this.ButtonInsert.Name = "ButtonInsert";
-            this.ButtonInsert.Size = new System.Drawing.Size(155, 48);
-            this.ButtonInsert.TabIndex = 2;
-            this.ButtonInsert.Text = "AFEGIR";
-            this.ButtonInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonInsert.UseVisualStyleBackColor = true;
-            this.ButtonInsert.Click += new System.EventHandler(this.ButtonInsert_Click);
-            // 
-            // ButtonUpdate
-            // 
-            this.ButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ButtonUpdate.Image")));
-            this.ButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonUpdate.Location = new System.Drawing.Point(813, 555);
-            this.ButtonUpdate.Name = "ButtonUpdate";
-            this.ButtonUpdate.Size = new System.Drawing.Size(155, 48);
-            this.ButtonUpdate.TabIndex = 3;
-            this.ButtonUpdate.Text = "MODIFICAR";
-            this.ButtonUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonUpdate.UseVisualStyleBackColor = true;
-            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
-            // 
-            // ButtonDelete
-            // 
-            this.ButtonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDelete.Image")));
-            this.ButtonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonDelete.Location = new System.Drawing.Point(330, 555);
-            this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.Size = new System.Drawing.Size(155, 48);
-            this.ButtonDelete.TabIndex = 4;
-            this.ButtonDelete.Text = "ELIMINAR";
-            this.ButtonDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonDelete.UseVisualStyleBackColor = true;
-            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
-            // 
-            // ButtonExit
-            // 
-            this.ButtonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonExit.Image = ((System.Drawing.Image)(resources.GetObject("ButtonExit.Image")));
-            this.ButtonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonExit.Location = new System.Drawing.Point(12, 555);
-            this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(155, 48);
-            this.ButtonExit.TabIndex = 5;
-            this.ButtonExit.Text = "EIXIR";
-            this.ButtonExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonExit.UseVisualStyleBackColor = true;
-            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // label2
             // 
@@ -278,6 +218,37 @@
             this.ButtonFind.UseVisualStyleBackColor = true;
             this.ButtonFind.Click += new System.EventHandler(this.ButtonFind_Click);
             // 
+            // ButtonExit
+            // 
+            this.ButtonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ButtonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonExit.Image = ((System.Drawing.Image)(resources.GetObject("ButtonExit.Image")));
+            this.ButtonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonExit.Location = new System.Drawing.Point(12, 555);
+            this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.Size = new System.Drawing.Size(155, 48);
+            this.ButtonExit.TabIndex = 5;
+            this.ButtonExit.Text = "EIXIR";
+            this.ButtonExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonExit.UseVisualStyleBackColor = true;
+            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
+            // 
+            // ButtonReports
+            // 
+            this.ButtonReports.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonReports.Image = ((System.Drawing.Image)(resources.GetObject("ButtonReports.Image")));
+            this.ButtonReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonReports.Location = new System.Drawing.Point(474, 555);
+            this.ButtonReports.Name = "ButtonReports";
+            this.ButtonReports.Size = new System.Drawing.Size(172, 48);
+            this.ButtonReports.TabIndex = 12;
+            this.ButtonReports.Text = "DOCUMENTS";
+            this.ButtonReports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonReports.UseVisualStyleBackColor = true;
+            this.ButtonReports.Click += new System.EventHandler(this.ButtonReports_Click);
+            // 
             // ButtonValidate
             // 
             this.ButtonValidate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -293,6 +264,51 @@
             this.ButtonValidate.UseVisualStyleBackColor = true;
             this.ButtonValidate.Click += new System.EventHandler(this.ButtonValidate_Click);
             // 
+            // ButtonDelete
+            // 
+            this.ButtonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDelete.Image")));
+            this.ButtonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDelete.Location = new System.Drawing.Point(261, 555);
+            this.ButtonDelete.Name = "ButtonDelete";
+            this.ButtonDelete.Size = new System.Drawing.Size(155, 48);
+            this.ButtonDelete.TabIndex = 4;
+            this.ButtonDelete.Text = "ELIMINAR";
+            this.ButtonDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonDelete.UseVisualStyleBackColor = true;
+            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            // 
+            // ButtonUpdate
+            // 
+            this.ButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ButtonUpdate.Image")));
+            this.ButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonUpdate.Location = new System.Drawing.Point(813, 555);
+            this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.Size = new System.Drawing.Size(155, 48);
+            this.ButtonUpdate.TabIndex = 3;
+            this.ButtonUpdate.Text = "MODIFICAR";
+            this.ButtonUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonUpdate.UseVisualStyleBackColor = true;
+            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
+            // 
+            // ButtonInsert
+            // 
+            this.ButtonInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonInsert.Image = ((System.Drawing.Image)(resources.GetObject("ButtonInsert.Image")));
+            this.ButtonInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonInsert.Location = new System.Drawing.Point(974, 555);
+            this.ButtonInsert.Name = "ButtonInsert";
+            this.ButtonInsert.Size = new System.Drawing.Size(155, 48);
+            this.ButtonInsert.TabIndex = 2;
+            this.ButtonInsert.Text = "AFEGIR";
+            this.ButtonInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonInsert.UseVisualStyleBackColor = true;
+            this.ButtonInsert.Click += new System.EventHandler(this.ButtonInsert_Click);
+            // 
             // PartnerList
             // 
             this.AcceptButton = this.ButtonFind;
@@ -300,6 +316,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ButtonExit;
             this.ClientSize = new System.Drawing.Size(1141, 615);
+            this.Controls.Add(this.ButtonReports);
             this.Controls.Add(this.ButtonValidate);
             this.Controls.Add(this.ButtonFind);
             this.Controls.Add(this.TBResponsibleMusician);
@@ -343,5 +360,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ButtonFind;
         private System.Windows.Forms.Button ButtonValidate;
+        private System.Windows.Forms.Button ButtonReports;
     }
 }

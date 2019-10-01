@@ -1,6 +1,7 @@
 ﻿using AmicsDeLaMusicaClassLibrary.src.Partner;
 using AmicsDeLaMusicaClassLibrary.Src.DataBase;
 using AmicsDeLaMusicaClassLibrary.Src.Partner;
+using AmicsDeLaMusicaClassLibrary.Src.Reports;
 using SimpleInjector;
 
 namespace AmicsDeLaMusicaClassLibrary.Src.Container
@@ -22,6 +23,8 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Container
 
                 _container.Register<IPartnerRepository, PartnerRepository>(Lifestyle.Singleton);
                 _container.Register<IPartnerService, PartnerService>(Lifestyle.Singleton);
+
+                _container.Register<ReportService>(Lifestyle.Singleton);
 
                 _container.Verify();
 
