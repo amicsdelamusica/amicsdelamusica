@@ -36,7 +36,6 @@ C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\bin\Debug\System.D
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\bin\Debug\System.Data.SQLite.dll.config
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\bin\Debug\de\PdfSharp.resources.dll
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\bin\Debug\de\PdfSharp.Charting.resources.dll
-C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeLaMusicaClassLibrary.csprojAssemblyReference.cache
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeLaMusicaClassLibrary.csproj.CoreCompileInputs.cache
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeLaMusicaClassLibrary.csproj.CopyComplete
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeLaMusicaClassLibrary.dll

@@ -93,7 +93,7 @@
             this.DGVPartners.RowHeadersVisible = false;
             this.DGVPartners.RowTemplate.Height = 24;
             this.DGVPartners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVPartners.Size = new System.Drawing.Size(1117, 411);
+            this.DGVPartners.Size = new System.Drawing.Size(1198, 411);
             this.DGVPartners.TabIndex = 0;
             this.DGVPartners.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPartners_CellDoubleClick);
             // 
@@ -162,7 +162,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1117, 73);
+            this.label1.Size = new System.Drawing.Size(1198, 73);
             this.label1.TabIndex = 1;
             this.label1.Text = "LLISTAT DE SOCIS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,7 +209,7 @@
             this.ButtonFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonFind.Image = ((System.Drawing.Image)(resources.GetObject("ButtonFind.Image")));
             this.ButtonFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonFind.Location = new System.Drawing.Point(974, 75);
+            this.ButtonFind.Location = new System.Drawing.Point(1055, 75);
             this.ButtonFind.Name = "ButtonFind";
             this.ButtonFind.Size = new System.Drawing.Size(155, 48);
             this.ButtonFind.TabIndex = 10;
@@ -240,7 +240,7 @@
             this.ButtonReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonReports.Image = ((System.Drawing.Image)(resources.GetObject("ButtonReports.Image")));
             this.ButtonReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonReports.Location = new System.Drawing.Point(474, 555);
+            this.ButtonReports.Location = new System.Drawing.Point(555, 555);
             this.ButtonReports.Name = "ButtonReports";
             this.ButtonReports.Size = new System.Drawing.Size(172, 48);
             this.ButtonReports.TabIndex = 12;
@@ -255,7 +255,7 @@
             this.ButtonValidate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonValidate.Image = ((System.Drawing.Image)(resources.GetObject("ButtonValidate.Image")));
             this.ButtonValidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonValidate.Location = new System.Drawing.Point(652, 555);
+            this.ButtonValidate.Location = new System.Drawing.Point(733, 555);
             this.ButtonValidate.Name = "ButtonValidate";
             this.ButtonValidate.Size = new System.Drawing.Size(155, 48);
             this.ButtonValidate.TabIndex = 11;
@@ -270,7 +270,7 @@
             this.ButtonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDelete.Image")));
             this.ButtonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonDelete.Location = new System.Drawing.Point(261, 555);
+            this.ButtonDelete.Location = new System.Drawing.Point(342, 555);
             this.ButtonDelete.Name = "ButtonDelete";
             this.ButtonDelete.Size = new System.Drawing.Size(155, 48);
             this.ButtonDelete.TabIndex = 4;
@@ -285,7 +285,7 @@
             this.ButtonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ButtonUpdate.Image")));
             this.ButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonUpdate.Location = new System.Drawing.Point(813, 555);
+            this.ButtonUpdate.Location = new System.Drawing.Point(894, 555);
             this.ButtonUpdate.Name = "ButtonUpdate";
             this.ButtonUpdate.Size = new System.Drawing.Size(155, 48);
             this.ButtonUpdate.TabIndex = 3;
@@ -300,7 +300,7 @@
             this.ButtonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonInsert.Image = ((System.Drawing.Image)(resources.GetObject("ButtonInsert.Image")));
             this.ButtonInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonInsert.Location = new System.Drawing.Point(974, 555);
+            this.ButtonInsert.Location = new System.Drawing.Point(1055, 555);
             this.ButtonInsert.Name = "ButtonInsert";
             this.ButtonInsert.Size = new System.Drawing.Size(155, 48);
             this.ButtonInsert.TabIndex = 2;
@@ -315,7 +315,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ButtonExit;
-            this.ClientSize = new System.Drawing.Size(1141, 615);
+            this.ClientSize = new System.Drawing.Size(1222, 615);
             this.Controls.Add(this.ButtonReports);
             this.Controls.Add(this.ButtonValidate);
             this.Controls.Add(this.ButtonFind);

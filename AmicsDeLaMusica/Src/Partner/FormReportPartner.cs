@@ -45,6 +45,8 @@ namespace AmicsDeLaMusica.Src.Partner
 
                 Validate();
 
+                Cursor = Cursors.WaitCursor;
+
                 _reportService.GetPartnerReport(
                     TBLetterPath.Text.Trim(), 
                     DTPDueDate.Value, 
@@ -61,6 +63,10 @@ namespace AmicsDeLaMusica.Src.Partner
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
 

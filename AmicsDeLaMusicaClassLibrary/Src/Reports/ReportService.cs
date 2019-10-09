@@ -12,8 +12,11 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
     public class ReportService
     {
 
-        private IPartnerService _partnerService;
+        private MusicianSheet _reportMusicianSheet = new MusicianSheet();
+        private PartnerTicket _reportPartnerTicket = new PartnerTicket();
+        private Reward _reportReward = new Reward();
 
+        private IPartnerService _partnerService;
 
         public ReportService(IPartnerService pPartnerService)
         {
@@ -41,11 +44,12 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
             var _groupedPartners =
                 from _partner in _partners
                 group _partner by _partner.ResponsibleMusician into newGroup
+                orderby newGroup.Key
                 select new { ResponsibleMusician = newGroup.Key, NumberOfPartners = newGroup.Count() };
 
             foreach (var _partnerGroup in _groupedPartners)
             {
-
+  
                 AddMusicianSheetReport(
                     _partnerGroup.ResponsibleMusician,
                     _partnerGroup.NumberOfPartners,
@@ -61,7 +65,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
 
                 AddPartnerLetter(_partnerGroup.NumberOfPartners, 
                     pLetterPath, 
-                    _outputFile);
+                    _outputFile);                         
                         
             }
 
@@ -83,16 +87,14 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
             string _path;
             PdfDocument _musicianSheet;
 
-            MusicianSheet report = new MusicianSheet();
-
-            report.DataDefinition.FormulaFields["ResponsibleMusician"].Text = $"'{pResponsibleMusician}'";
-            report.DataDefinition.FormulaFields["TotalPartners"].Text = $"'{pNumberOfPartners}'";
-            report.DataDefinition.FormulaFields["TotalAmount"].Text = $"'{pTotalAmount}'";
-            report.DataDefinition.FormulaFields["DueDate"].Text = $"'{pDueDate.ToShortDateString()}'";
+            _reportMusicianSheet.DataDefinition.FormulaFields["ResponsibleMusician"].Text = $"'{pResponsibleMusician}'";
+            _reportMusicianSheet.DataDefinition.FormulaFields["TotalPartners"].Text = $"'{pNumberOfPartners}'";
+            _reportMusicianSheet.DataDefinition.FormulaFields["TotalAmount"].Text = $"'{pTotalAmount}'";
+            _reportMusicianSheet.DataDefinition.FormulaFields["DueDate"].Text = $"'{pDueDate.ToShortDateString()}'";
 
             _path = $"{Path.GetTempPath()}{pResponsibleMusician}.pdf";
 
-            report.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, _path);
+            _reportMusicianSheet.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, _path);
 
             _musicianSheet = PdfReader.Open(_path, PdfDocumentOpenMode.Import);
 
@@ -112,17 +114,16 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
             string _path;
             PdfDocument _partnerTicket;
             IEnumerable<Partner.Partner> _musicianPartners;
-            PartnerTicket report = new PartnerTicket();
 
-            report.DataDefinition.FormulaFields["Amount"].Text = $"'{pAmount}'";
+            _reportPartnerTicket.DataDefinition.FormulaFields["Amount"].Text = $"'{pAmount}'";
 
             _musicianPartners = pPartners.Where(_partner => _partner.ResponsibleMusician == pResponsibleMusician);
 
-            report.SetDataSource(_musicianPartners);
+                _reportPartnerTicket.SetDataSource(_musicianPartners);
 
             _path = $"{Path.GetTempPath()}{pResponsibleMusician}.pdf";
 
-            report.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, _path);
+                _reportPartnerTicket.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, _path);
 
             _partnerTicket = PdfReader.Open(_path, PdfDocumentOpenMode.Import);
 
@@ -132,7 +133,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
             }
                 
             File.Delete(_path);
-
+            
         }
 
         private void AddPartnerLetter(int pNumberOfPartners, 
@@ -154,8 +155,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
         public void GetRewardReport(string pOutputPath)
         {
             IEnumerable<Partner.Partner> _partners;
-            string _path;
-            Reward report = new Reward();
+            string _path;          
 
             Partner.Partner _partnerQuery = new Partner.Partner()
             {
@@ -165,11 +165,11 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
 
             _partners = _partnerService.FindAll(_partnerQuery);
 
-            report.SetDataSource(_partners);
+            _reportReward.SetDataSource(_partners);
 
             _path = $"{pOutputPath}\\SORTEIG{DateTime.Today.Year}.pdf";
 
-            report.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, _path);
+            _reportReward.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, _path);
 
             Process.Start(_path);
 

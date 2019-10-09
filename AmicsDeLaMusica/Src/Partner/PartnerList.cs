@@ -69,6 +69,8 @@ namespace AmicsDeLaMusica.Src.Partner
 
                 LoadData();
 
+                TBPartnerName.Focus();
+
             }
         }
 
@@ -229,22 +231,22 @@ namespace AmicsDeLaMusica.Src.Partner
         private void ButtonReports_Click(object sender, EventArgs e)
         {
 
-            AppContainer.GetInstance().GetInstance<FormReportPartner>().ShowDialog();
+            //AppContainer.GetInstance().GetInstance<FormReportPartner>().ShowDialog();
 
-            //if (_partnerService.Validate())
-            //{
-            //    AppContainer.GetInstance().GetInstance<FormReportPartner>();
-            //}
-            //else
-            //{
+            if (_partnerService.Validate())
+            {
+                AppContainer.GetInstance().GetInstance<FormReportPartner>();
+            }
+            else
+            {
 
-            //    MessageBox.Show(
-            //        "La informació dels socis NO és correcta. Valida-la per a continuar.",
-            //        "Error",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "La informació dels socis NO és correcta. Valida-la per a continuar.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
 
-            //}
+            }
         }
     }
 }
