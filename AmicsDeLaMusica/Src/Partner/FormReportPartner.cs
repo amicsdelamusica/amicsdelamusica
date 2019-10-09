@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,6 @@ namespace AmicsDeLaMusica.Src.Partner
 {
     public partial class FormReportPartner : Form
     {
-        private string _letterFullPath;
 
         private ReportService _reportService;
 
@@ -24,11 +24,16 @@ namespace AmicsDeLaMusica.Src.Partner
             _reportService = pReportService;
         }
 
+        private void FormReportPartner_Load(object sender, EventArgs e)
+        {
+            DTPDueDate.Value = DateTime.Today;
+        }
+
         private void ButtonBrowseLetter_Click(object sender, EventArgs e)
         {
             if (OFDLetter.ShowDialog() == DialogResult.OK)
             {
-                _letterFullPath = OFDLetter.FileName;
+                TBLetterPath.Text = OFDLetter.FileName;
             }
 
         }
@@ -37,9 +42,14 @@ namespace AmicsDeLaMusica.Src.Partner
         {
             try
             {
-                //Validate();
 
-                _reportService.GetPartnerReport("C:\\Users\\JorGe\\Documents\\1.pdf");
+                Validate();
+
+                _reportService.GetPartnerReport(
+                    TBLetterPath.Text.Trim(), 
+                    DTPDueDate.Value, 
+                    NumericAmount.Value,
+                    TBOutputPath.Text.Trim());
 
             }
             catch (Exception ex)
@@ -47,21 +57,46 @@ namespace AmicsDeLaMusica.Src.Partner
 
                 MessageBox.Show(
                     ex.Message,
-                    "error",
+                    "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
             }
         }
 
-        private void Validate()
+        private new void Validate()
         {
             if (String.IsNullOrWhiteSpace(TBLetterPath.Text))
             {
                 throw new ArgumentException("Introdueix la ruta de la carta per als socis.");
             }
+
+            if (!File.Exists(TBLetterPath.Text)){
+                throw new ArgumentException($"El document {TBLetterPath.Text.Trim()} no existeix");
+            }
+
+            if (NumericAmount.Value == 0)
+            {
+                throw new ArgumentException("Introdeix l'import a cobrar.");
+            }
+
+            if (String.IsNullOrWhiteSpace(TBOutputPath.Text))
+            {
+                throw new ArgumentException("Introdueix la ruta on vols generar el document.");
+            }
+
+            if (!Directory.Exists(TBOutputPath.Text.Trim()))
+            {
+                throw new ArgumentException($"La carpeta {TBOutputPath.Text.Trim()} no existeix.");
+            }
         }
 
-     
+        private void ButtonBrowseOutput_Click(object sender, EventArgs e)
+        {
+            if (FBDOutput.ShowDialog() == DialogResult.OK)
+            {
+                TBOutputPath.Text = FBDOutput.SelectedPath;
+            }
+        }
     }
 }

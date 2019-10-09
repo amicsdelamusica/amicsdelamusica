@@ -35,6 +35,16 @@
             this.OFDLetter = new System.Windows.Forms.OpenFileDialog();
             this.ButtonReward = new System.Windows.Forms.Button();
             this.ButtonPartnerReport = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DTPDueDate = new System.Windows.Forms.DateTimePicker();
+            this.ButtonBrowseOutput = new System.Windows.Forms.Button();
+            this.TBOutputPath = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.NumericAmount = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.FBDOutput = new System.Windows.Forms.FolderBrowserDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,6 +62,7 @@
             this.TBLetterPath.Name = "TBLetterPath";
             this.TBLetterPath.Size = new System.Drawing.Size(389, 27);
             this.TBLetterPath.TabIndex = 1;
+            this.TBLetterPath.Text = "C:\\Users\\JorGe\\Documents\\1.pdf";
             // 
             // ButtonBrowseLetter
             // 
@@ -72,7 +83,7 @@
             this.ButtonReward.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonReward.Image = ((System.Drawing.Image)(resources.GetObject("ButtonReward.Image")));
             this.ButtonReward.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonReward.Location = new System.Drawing.Point(16, 62);
+            this.ButtonReward.Location = new System.Drawing.Point(12, 118);
             this.ButtonReward.Name = "ButtonReward";
             this.ButtonReward.Size = new System.Drawing.Size(216, 48);
             this.ButtonReward.TabIndex = 3;
@@ -85,7 +96,7 @@
             this.ButtonPartnerReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonPartnerReport.Image = ((System.Drawing.Image)(resources.GetObject("ButtonPartnerReport.Image")));
             this.ButtonPartnerReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonPartnerReport.Location = new System.Drawing.Point(413, 62);
+            this.ButtonPartnerReport.Location = new System.Drawing.Point(413, 118);
             this.ButtonPartnerReport.Name = "ButtonPartnerReport";
             this.ButtonPartnerReport.Size = new System.Drawing.Size(259, 48);
             this.ButtonPartnerReport.TabIndex = 4;
@@ -94,11 +105,94 @@
             this.ButtonPartnerReport.UseVisualStyleBackColor = true;
             this.ButtonPartnerReport.Click += new System.EventHandler(this.ButtonPartnerReport_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Data límit";
+            // 
+            // DTPDueDate
+            // 
+            this.DTPDueDate.Location = new System.Drawing.Point(169, 52);
+            this.DTPDueDate.Name = "DTPDueDate";
+            this.DTPDueDate.Size = new System.Drawing.Size(239, 27);
+            this.DTPDueDate.TabIndex = 6;
+            // 
+            // ButtonBrowseOutput
+            // 
+            this.ButtonBrowseOutput.Location = new System.Drawing.Point(564, 85);
+            this.ButtonBrowseOutput.Name = "ButtonBrowseOutput";
+            this.ButtonBrowseOutput.Size = new System.Drawing.Size(108, 27);
+            this.ButtonBrowseOutput.TabIndex = 9;
+            this.ButtonBrowseOutput.Text = "Examinar...";
+            this.ButtonBrowseOutput.UseVisualStyleBackColor = true;
+            this.ButtonBrowseOutput.Click += new System.EventHandler(this.ButtonBrowseOutput_Click);
+            // 
+            // TBOutputPath
+            // 
+            this.TBOutputPath.Location = new System.Drawing.Point(169, 85);
+            this.TBOutputPath.Name = "TBOutputPath";
+            this.TBOutputPath.Size = new System.Drawing.Size(389, 27);
+            this.TBOutputPath.TabIndex = 8;
+            this.TBOutputPath.Text = "C:\\Temp";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Guardar en";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(414, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Import";
+            // 
+            // NumericAmount
+            // 
+            this.NumericAmount.DecimalPlaces = 2;
+            this.NumericAmount.Location = new System.Drawing.Point(476, 52);
+            this.NumericAmount.Name = "NumericAmount";
+            this.NumericAmount.Size = new System.Drawing.Size(82, 27);
+            this.NumericAmount.TabIndex = 11;
+            this.NumericAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.NumericAmount.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(564, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Euros";
+            // 
             // FormReportPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 124);
+            this.ClientSize = new System.Drawing.Size(683, 175);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.NumericAmount);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ButtonBrowseOutput);
+            this.Controls.Add(this.TBOutputPath);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.DTPDueDate);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ButtonPartnerReport);
             this.Controls.Add(this.ButtonReward);
             this.Controls.Add(this.ButtonBrowseLetter);
@@ -112,6 +206,8 @@
             this.Name = "FormReportPartner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Documents";
+            this.Load += new System.EventHandler(this.FormReportPartner_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.NumericAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +221,14 @@
         private System.Windows.Forms.OpenFileDialog OFDLetter;
         private System.Windows.Forms.Button ButtonReward;
         private System.Windows.Forms.Button ButtonPartnerReport;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker DTPDueDate;
+        private System.Windows.Forms.Button ButtonBrowseOutput;
+        private System.Windows.Forms.TextBox TBOutputPath;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown NumericAmount;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.FolderBrowserDialog FBDOutput;
     }
 }
