@@ -90,6 +90,7 @@
             this.ButtonReward.Text = "LLISTAT SORTEIG";
             this.ButtonReward.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonReward.UseVisualStyleBackColor = true;
+            this.ButtonReward.Click += new System.EventHandler(this.ButtonReward_Click);
             // 
             // ButtonPartnerReport
             // 

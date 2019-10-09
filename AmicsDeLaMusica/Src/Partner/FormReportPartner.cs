@@ -80,6 +80,42 @@ namespace AmicsDeLaMusica.Src.Partner
                 throw new ArgumentException("Introdeix l'import a cobrar.");
             }
 
+            ValidateOutputPath();
+
+        }
+
+        private void ButtonBrowseOutput_Click(object sender, EventArgs e)
+        {
+            if (FBDOutput.ShowDialog() == DialogResult.OK)
+            {
+                TBOutputPath.Text = FBDOutput.SelectedPath;
+            }
+        }
+
+        private void ButtonReward_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ValidateOutputPath();
+
+                _reportService.GetRewardReport(TBOutputPath.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void ValidateOutputPath()
+        {
             if (String.IsNullOrWhiteSpace(TBOutputPath.Text))
             {
                 throw new ArgumentException("Introdueix la ruta on vols generar el document.");
@@ -88,14 +124,6 @@ namespace AmicsDeLaMusica.Src.Partner
             if (!Directory.Exists(TBOutputPath.Text.Trim()))
             {
                 throw new ArgumentException($"La carpeta {TBOutputPath.Text.Trim()} no existeix.");
-            }
-        }
-
-        private void ButtonBrowseOutput_Click(object sender, EventArgs e)
-        {
-            if (FBDOutput.ShowDialog() == DialogResult.OK)
-            {
-                TBOutputPath.Text = FBDOutput.SelectedPath;
             }
         }
     }

@@ -30,8 +30,6 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
             string _outputFilePath;
             PdfDocument _outputFile = new PdfDocument();
 
-            PdfDocument _letter = PdfReader.Open(pLetterPath, PdfDocumentOpenMode.Import);
-
             Partner.Partner _partnerQuery = new Partner.Partner()
             {
                 PartnerName = string.Empty,
@@ -61,15 +59,10 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
                     _partnerGroup.ResponsibleMusician, 
                     _outputFile);
 
-
-                for(int i = 0; i < _partnerGroup.NumberOfPartners; i++)
-                {
-                    for (int j = 0; j < _letter.Pages.Count; j++)
-                    {
-                        _outputFile.AddPage(_letter.Pages[j]);
-                    }
-                }
-             
+                AddPartnerLetter(_partnerGroup.NumberOfPartners, 
+                    pLetterPath, 
+                    _outputFile);
+                        
             }
 
             _outputFilePath = $"{pOutputPath}\\SOCIS{DateTime.Today.Year}.pdf";
@@ -140,6 +133,45 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
                 
             File.Delete(_path);
 
+        }
+
+        private void AddPartnerLetter(int pNumberOfPartners, 
+            string pLetterPath,
+            PdfDocument pOutputFile)
+        {
+
+            PdfDocument _letter = PdfReader.Open(pLetterPath, PdfDocumentOpenMode.Import);
+
+            for (int i = 0; i < pNumberOfPartners; i++)
+            {
+                for (int j = 0; j < _letter.Pages.Count; j++)
+                {
+                    pOutputFile.AddPage(_letter.Pages[j]);
+                }
+            }
+        }
+
+        public void GetRewardReport(string pOutputPath)
+        {
+            IEnumerable<Partner.Partner> _partners;
+            string _path;
+            Reward report = new Reward();
+
+            Partner.Partner _partnerQuery = new Partner.Partner()
+            {
+                PartnerName = string.Empty,
+                ResponsibleMusician = string.Empty,
+            };
+
+            _partners = _partnerService.FindAll(_partnerQuery);
+
+            report.SetDataSource(_partners);
+
+            _path = $"{pOutputPath}\\SORTEIG{DateTime.Today.Year}.pdf";
+
+            report.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, _path);
+
+            Process.Start(_path);
 
         }
 

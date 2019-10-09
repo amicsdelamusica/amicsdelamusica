@@ -98,6 +98,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Reports\ReportService.cs" />
+    <Compile Include="Src\Reports\Reward.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reward.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -111,6 +117,10 @@
     <EmbeddedResource Include="Src\Reports\PartnerTicket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PartnerTicket.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Reports\Reward.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reward.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
