@@ -91,6 +91,12 @@
       <DependentUpon>MusicianSheet.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Src\Reports\PartnerTicket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartnerTicket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Reports\ReportService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +107,10 @@
     <EmbeddedResource Include="Src\Reports\MusicianSheet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MusicianSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Reports\PartnerTicket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PartnerTicket.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

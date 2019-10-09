@@ -116,9 +116,10 @@
             // 
             // DTPDueDate
             // 
+            this.DTPDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTPDueDate.Location = new System.Drawing.Point(169, 52);
             this.DTPDueDate.Name = "DTPDueDate";
-            this.DTPDueDate.Size = new System.Drawing.Size(239, 27);
+            this.DTPDueDate.Size = new System.Drawing.Size(180, 27);
             this.DTPDueDate.TabIndex = 6;
             // 
             // ButtonBrowseOutput
@@ -151,7 +152,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(414, 57);
+            this.label4.Location = new System.Drawing.Point(355, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 10;
@@ -160,7 +161,7 @@
             // NumericAmount
             // 
             this.NumericAmount.DecimalPlaces = 2;
-            this.NumericAmount.Location = new System.Drawing.Point(476, 52);
+            this.NumericAmount.Location = new System.Drawing.Point(417, 52);
             this.NumericAmount.Name = "NumericAmount";
             this.NumericAmount.Size = new System.Drawing.Size(82, 27);
             this.NumericAmount.TabIndex = 11;
@@ -174,7 +175,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(564, 57);
+            this.label5.Location = new System.Drawing.Point(505, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 20);
             this.label5.TabIndex = 12;

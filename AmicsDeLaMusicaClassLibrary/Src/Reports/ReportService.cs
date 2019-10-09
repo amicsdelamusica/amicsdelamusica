@@ -14,7 +14,6 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
 
         private IPartnerService _partnerService;
 
-        private IEnumerable<Partner.Partner> _partners;
 
         public ReportService(IPartnerService pPartnerService)
         {
@@ -26,6 +25,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
             decimal pAmount,
             string pOutputPath)
         {
+            IEnumerable<Partner.Partner> _partners;
 
             string _outputFilePath;
             PdfDocument _outputFile = new PdfDocument();
@@ -54,8 +54,13 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
                     _partnerGroup.NumberOfPartners * pAmount,
                     pDueDate,
                     _outputFile);
-           
-                //Add report tickets
+
+                AddPartnerTicketReport(
+                    _partners,
+                    pAmount,
+                    _partnerGroup.ResponsibleMusician, 
+                    _outputFile);
+
 
                 for(int i = 0; i < _partnerGroup.NumberOfPartners; i++)
                 {
@@ -103,5 +108,40 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Reports
             File.Delete(_path);
 
         }
+
+        private void AddPartnerTicketReport(
+            IEnumerable<Partner.Partner> pPartners,
+            decimal pAmount, 
+            string pResponsibleMusician,
+            PdfDocument pOutputFile)
+        {
+
+            string _path;
+            PdfDocument _partnerTicket;
+            IEnumerable<Partner.Partner> _musicianPartners;
+            PartnerTicket report = new PartnerTicket();
+
+            report.DataDefinition.FormulaFields["Amount"].Text = $"'{pAmount}'";
+
+            _musicianPartners = pPartners.Where(_partner => _partner.ResponsibleMusician == pResponsibleMusician);
+
+            report.SetDataSource(_musicianPartners);
+
+            _path = $"{Path.GetTempPath()}{pResponsibleMusician}.pdf";
+
+            report.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, _path);
+
+            _partnerTicket = PdfReader.Open(_path, PdfDocumentOpenMode.Import);
+
+            for (int i = 0; i < _partnerTicket.Pages.Count; i++)
+            {
+                pOutputFile.AddPage(_partnerTicket.Pages[i]);
+            }
+                
+            File.Delete(_path);
+
+
+        }
+
     }
 }
