@@ -31,8 +31,7 @@ namespace AmicsDeLaMusicaClassLibrary.src.Partner
 
         public bool Validate()
         {
-            //return !(HasGap() || FindAllWithoutResponsibleMusician().Count() > 0);
-            return !(_repository.HasGap());
+            return !(HasGap() || FindAllWithoutResponsibleMusician().Count() > 0);
         }
 
         public void Insert(Src.Partner.Partner pPartner)

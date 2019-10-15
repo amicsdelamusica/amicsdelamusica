@@ -40,3 +40,4 @@ C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeL
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeLaMusicaClassLibrary.csproj.CopyComplete
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeLaMusicaClassLibrary.dll
 C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeLaMusicaClassLibrary.pdb
+C:\Develop\DOTNET\AmicsDeLaMusica\AmicsDeLaMusicaClassLibrary\obj\Debug\AmicsDeLaMusicaClassLibrary.csprojAssemblyReference.cache
