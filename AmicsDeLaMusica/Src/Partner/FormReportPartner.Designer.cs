@@ -62,7 +62,6 @@
             this.TBLetterPath.Name = "TBLetterPath";
             this.TBLetterPath.Size = new System.Drawing.Size(389, 27);
             this.TBLetterPath.TabIndex = 1;
-            this.TBLetterPath.Text = "C:\\Users\\JorGe\\Documents\\1.pdf";
             // 
             // ButtonBrowseLetter
             // 
@@ -139,7 +138,6 @@
             this.TBOutputPath.Name = "TBOutputPath";
             this.TBOutputPath.Size = new System.Drawing.Size(389, 27);
             this.TBOutputPath.TabIndex = 8;
-            this.TBOutputPath.Text = "C:\\Temp";
             // 
             // label3
             // 

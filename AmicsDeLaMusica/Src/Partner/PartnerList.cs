@@ -231,11 +231,9 @@ namespace AmicsDeLaMusica.Src.Partner
         private void ButtonReports_Click(object sender, EventArgs e)
         {
 
-            //AppContainer.GetInstance().GetInstance<FormReportPartner>().ShowDialog();
-
             if (_partnerService.Validate())
             {
-                AppContainer.GetInstance().GetInstance<FormReportPartner>();
+                AppContainer.GetInstance().GetInstance<FormReportPartner>().ShowDialog();
             }
             else
             {

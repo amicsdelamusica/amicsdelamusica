@@ -172,6 +172,7 @@
             // 
             // TBPartnerName
             // 
+            this.TBPartnerName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBPartnerName.Location = new System.Drawing.Point(168, 14);
             this.TBPartnerName.Margin = new System.Windows.Forms.Padding(4);
             this.TBPartnerName.Name = "TBPartnerName";
