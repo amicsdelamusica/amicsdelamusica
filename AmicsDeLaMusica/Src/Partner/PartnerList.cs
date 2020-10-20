@@ -33,7 +33,9 @@ namespace AmicsDeLaMusica.Src.Partner
 
         private void LoadData()
         {
-            DGVPartners.DataSource = _partnerService.FindAll(GetPartnerFromForm());
+            IEnumerable<AmicsDeLaMusicaClassLibrary.Src.Partner.Partner> _partners = _partnerService.FindAll(GetPartnerFromForm());
+            DGVPartners.DataSource = _partners;
+            labelPartners.Text = "Socis: " + _partners.Count();
         }
 
         private AmicsDeLaMusicaClassLibrary.Src.Partner.Partner GetPartnerFromForm()

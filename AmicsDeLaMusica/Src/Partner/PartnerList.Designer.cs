@@ -52,6 +52,7 @@
             this.ButtonDelete = new System.Windows.Forms.Button();
             this.ButtonUpdate = new System.Windows.Forms.Button();
             this.ButtonInsert = new System.Windows.Forms.Button();
+            this.labelPartners = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPartners)).BeginInit();
             this.SuspendLayout();
             // 
@@ -309,6 +310,16 @@
             this.ButtonInsert.UseVisualStyleBackColor = true;
             this.ButtonInsert.Click += new System.EventHandler(this.ButtonInsert_Click);
             // 
+            // labelPartners
+            // 
+            this.labelPartners.AutoSize = true;
+            this.labelPartners.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPartners.Location = new System.Drawing.Point(921, 89);
+            this.labelPartners.Name = "labelPartners";
+            this.labelPartners.Size = new System.Drawing.Size(56, 20);
+            this.labelPartners.TabIndex = 13;
+            this.labelPartners.Text = "Socis:";
+            // 
             // PartnerList
             // 
             this.AcceptButton = this.ButtonFind;
@@ -316,6 +327,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ButtonExit;
             this.ClientSize = new System.Drawing.Size(1222, 615);
+            this.Controls.Add(this.labelPartners);
             this.Controls.Add(this.ButtonReports);
             this.Controls.Add(this.ButtonValidate);
             this.Controls.Add(this.ButtonFind);
@@ -361,5 +373,6 @@
         private System.Windows.Forms.Button ButtonFind;
         private System.Windows.Forms.Button ButtonValidate;
         private System.Windows.Forms.Button ButtonReports;
+        private System.Windows.Forms.Label labelPartners;
     }
 }
