@@ -20,6 +20,7 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Container
                 _container.RegisterInstance(new DataBaseService());
 
                 _container.Options.AllowOverridingRegistrations = true;
+                _container.Options.ResolveUnregisteredConcreteTypes = true;
 
                 _container.Register<IPartnerRepository, PartnerRepository>(Lifestyle.Singleton);
                 _container.Register<IPartnerService, PartnerService>(Lifestyle.Singleton);
