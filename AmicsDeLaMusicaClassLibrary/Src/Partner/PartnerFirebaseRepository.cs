@@ -49,18 +49,25 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         public IEnumerable<Partner> FindAll(Partner pPartner)
         {
-            Query query = collection.
-                OrderBy("Id");
 
-            if (!string.IsNullOrWhiteSpace(pPartner.PartnerName))
-            {
-                query.WhereArrayContains("PartnerName", pPartner.PartnerName);
-            }
-
-            QuerySnapshot snapshot = query.   
+            IEnumerable<Partner> results;
+            
+            QuerySnapshot snapshot = collection.
+                OrderBy("Id").
                 GetSnapshotAsync().Result;
 
-            return snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>()).ToList();
+
+
+            results = snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>()).ToList();
+
+            if (!string.IsNullOrWhiteSpace(pPartner.ResponsibleMusician))
+                results = results.Where(r => r.ResponsibleMusician.ToUpper().Contains(pPartner.ResponsibleMusician.ToUpper())).ToList();
+
+
+            if (!string.IsNullOrWhiteSpace(pPartner.PartnerName))
+                results = results.Where(r => r.PartnerName.ToUpper().Contains(pPartner.PartnerName.ToUpper())).ToList();
+
+            return results;
             
         }
 
