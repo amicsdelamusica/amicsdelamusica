@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 {
-    class PartnerRepository : IPartnerRepository
+    public class PartnerRepository : IPartnerRepository
     {
 
         #region "SQL"

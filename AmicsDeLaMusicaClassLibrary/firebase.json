@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "amicsdelamusica-df31d",
+  "private_key_id": "0251a45d1bb20d867e3a08ed64d89d68c64726b1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCKQBDFKqcDtnjw\n+5i0j2aMsrj2AEXuBz5E1D7gthZnrOvTx8e+GqMTKYVGyuj4t1kpPWij1cSGTiV1\nVNpzdmWmp3l/uWatZA6VBRJQFUCGffqsiVeS9pfTvjNFWhd42A+QJ/b+C1ygwbeK\n+fOHX5jGeuBUHH0pv5vIXBUa4/TuVXPwdAMHPf9tEH+7/tKFC7OLcZZNX+aFswSR\nH3RdTlW7b5ixMEFiUCz1RSpWT27TM8h8wV24CUam1JdM9enIAXcptwsnqrmWeGBh\nUY1Q0VC9pxayLnj34ZQW0ko1wi9SewaF3PsWlQL5tyzpzKkBO89tj2L2GGIEUEKt\nMF7isHeHAgMBAAECggEAKVtS6PiCb8zlTwmku9buEYbhZ83bHYKTMRnhGW2/NBJ5\nlaf867SiNfhEw1Gt8cE/bePN6rznBlpYQEo68zFm5TzSTtASlCoLZq7WtJg27kS/\neV+4j+EuuAv84HE79k2EElayP3r8oaZxlqSBIm0Jkc5uTxsaoiOMoZpSQfIRcj4z\nSxJnVv5C7YaK3j6dKFIvmrfm7Q5eRTscpL6MTfQFx7A4aNnTekiG6fwar52xZZmZ\nPkGTBXOF6Fzo9C7rQRQbM99XemlQNVKYNDDuP5r9fSIH0vHsShTCjlWq0L5BueG9\nytPStDtXw0OJtnyKb1bTXbr9174w0Iv63xkoafa48QKBgQDCibtfJwXyprFBRu7u\nK2HlTAIwVadAI46lKvDa/kyHWuaNqZ71b/zCnJ1pnKU/zWrihLPN6BEvIQaY+MLh\nBVrKqmn6TFOzxuvlLyz0hO3wJN80kor7WezIaw1RYGdasEFr3HuY1xXOKd481c+t\nD5mKWoQ0pCDLdwVWiJUTqCu7LwKBgQC17cUa5LP4aEimD7amK15brdiY64woTTSN\nkuBvFUclpZKI7s6FVag8pmowbRadw0SVsOB0yD6qRM4KpCrkuHlpVz7QqtvTkZd0\nv4GGLpOeVTm8UkEcBbNXUuusc9MPwg3WnbYwF4oEr4ZzjsSt9rXBjEtrFP/YsY6f\nRSjZCSUTKQKBgQCqltac6P5ZOv1Cra4FYjt1NALTWbjREJ0cjxwoHUkEhJyZ6vz+\nYtZ13ZpXq0ppOXuZ6R422GKBPmenqrRRWD22bFuEZnwbsLrY/VZhkVOI+vxUAJEp\nOkDduqoyCuR27QphSDWF4E45vBMqq59yNbTBUwCNnMM5SESBDkITu6uldwKBgAl0\nd//zzt6kHNJ0kpuEOX0uRcl8xGX7zTVmYr+jLXVpa3ouXxFS6FFunKozoS9FzLSy\n4pdvKMKUnNi0u33zkGvHGv6hQpd2Q5bPtR2SIh3idAOziqq4KR/qsVDfHCL/hNSY\nkbViI8wmiyhKTTJ1VfDfJ7RC/SD36V+hqoPNE94xAoGAJQqh63TNBdI4KJsg+c24\nmj2nFnfFFgDwjrYnuFUiRAGEa8INLH7WqiRjhlURcmaUhwnuCMLDXWFaJC4axLxw\nI3d6rvV9XnDyxcgYwiUBWfgRn7JeQF4/jE9lG7oOETkfBKDMkWvjyFXo5MEg/aWs\n/z4PA46g2Jw5nuSr1y+xyM4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-pvpe6@amicsdelamusica-df31d.iam.gserviceaccount.com",
+  "client_id": "103543241087649606325",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-pvpe6%40amicsdelamusica-df31d.iam.gserviceaccount.com"
+}

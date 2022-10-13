@@ -22,8 +22,32 @@ namespace AmicsDeLaMusica.Src.Partner
 
         private void PartnerList_Load(object sender, EventArgs e)
         {
+
+            //MigrateDb();
+
+
             DGVPartners.AutoGenerateColumns = false;
             LoadData();
+        }
+
+        private void MigrateDb()
+        {
+
+            IPartnerRepository sqlitePartnerRepository;
+            IPartnerRepository firebasePartnerRepository;
+
+            IEnumerable<AmicsDeLaMusicaClassLibrary.Src.Partner.Partner> partners;
+
+            sqlitePartnerRepository = new PartnerRepository(new AmicsDeLaMusicaClassLibrary.Src.DataBase.DataBaseService());
+            firebasePartnerRepository = new PartnerFirebaseRepository();
+
+            partners = sqlitePartnerRepository.FindAll(GetPartnerFromForm());
+
+            foreach (var partner in partners)
+            {
+                firebasePartnerRepository.Insert(partner);
+            }
+
         }
 
         private void ButtonFind_Click(object sender, EventArgs e)
@@ -35,7 +59,7 @@ namespace AmicsDeLaMusica.Src.Partner
         {
             IEnumerable<AmicsDeLaMusicaClassLibrary.Src.Partner.Partner> _partners = _partnerService.FindAll(GetPartnerFromForm());
             DGVPartners.DataSource = _partners;
-            labelPartners.Text = "Socis: " + _partners.Count();
+            labelPartners.Text = "Socis: " + _partners?.Count();
         }
 
         private AmicsDeLaMusicaClassLibrary.Src.Partner.Partner GetPartnerFromForm()

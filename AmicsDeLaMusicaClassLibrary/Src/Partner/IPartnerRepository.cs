@@ -2,7 +2,7 @@
 
 namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 {
-    interface IPartnerRepository
+    public interface IPartnerRepository
     {
 
         Partner Find(Partner pPartner);
