@@ -88,13 +88,14 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVPartners.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DGVPartners.Location = new System.Drawing.Point(12, 138);
+            this.DGVPartners.Location = new System.Drawing.Point(9, 112);
+            this.DGVPartners.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DGVPartners.Name = "DGVPartners";
             this.DGVPartners.ReadOnly = true;
             this.DGVPartners.RowHeadersVisible = false;
             this.DGVPartners.RowTemplate.Height = 24;
             this.DGVPartners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVPartners.Size = new System.Drawing.Size(1198, 411);
+            this.DGVPartners.Size = new System.Drawing.Size(1158, 404);
             this.DGVPartners.TabIndex = 0;
             this.DGVPartners.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPartners_CellDoubleClick);
             // 
@@ -161,9 +162,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1198, 73);
+            this.label1.Size = new System.Drawing.Size(1158, 59);
             this.label1.TabIndex = 1;
             this.label1.Text = "LLISTAT DE SOCIS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,35 +174,39 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 89);
+            this.label2.Location = new System.Drawing.Point(9, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.Size = new System.Drawing.Size(41, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Nom:";
             // 
             // TBPartnerName
             // 
             this.TBPartnerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPartnerName.Location = new System.Drawing.Point(67, 86);
+            this.TBPartnerName.Location = new System.Drawing.Point(50, 70);
+            this.TBPartnerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBPartnerName.Name = "TBPartnerName";
-            this.TBPartnerName.Size = new System.Drawing.Size(349, 27);
+            this.TBPartnerName.Size = new System.Drawing.Size(263, 23);
             this.TBPartnerName.TabIndex = 7;
             // 
             // TBResponsibleMusician
             // 
             this.TBResponsibleMusician.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBResponsibleMusician.Location = new System.Drawing.Point(545, 86);
+            this.TBResponsibleMusician.Location = new System.Drawing.Point(409, 70);
+            this.TBResponsibleMusician.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBResponsibleMusician.Name = "TBResponsibleMusician";
-            this.TBResponsibleMusician.Size = new System.Drawing.Size(349, 27);
+            this.TBResponsibleMusician.Size = new System.Drawing.Size(263, 23);
             this.TBResponsibleMusician.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(428, 89);
+            this.label3.Location = new System.Drawing.Point(321, 72);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Responsable:";
             // 
@@ -210,9 +216,10 @@
             this.ButtonFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonFind.Image = ((System.Drawing.Image)(resources.GetObject("ButtonFind.Image")));
             this.ButtonFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonFind.Location = new System.Drawing.Point(1055, 75);
+            this.ButtonFind.Location = new System.Drawing.Point(1051, 61);
+            this.ButtonFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonFind.Name = "ButtonFind";
-            this.ButtonFind.Size = new System.Drawing.Size(155, 48);
+            this.ButtonFind.Size = new System.Drawing.Size(116, 39);
             this.ButtonFind.TabIndex = 10;
             this.ButtonFind.Text = "BUSCAR";
             this.ButtonFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -226,9 +233,10 @@
             this.ButtonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonExit.Image = ((System.Drawing.Image)(resources.GetObject("ButtonExit.Image")));
             this.ButtonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonExit.Location = new System.Drawing.Point(12, 555);
+            this.ButtonExit.Location = new System.Drawing.Point(9, 521);
+            this.ButtonExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(155, 48);
+            this.ButtonExit.Size = new System.Drawing.Size(116, 39);
             this.ButtonExit.TabIndex = 5;
             this.ButtonExit.Text = "EIXIR";
             this.ButtonExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -241,9 +249,10 @@
             this.ButtonReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonReports.Image = ((System.Drawing.Image)(resources.GetObject("ButtonReports.Image")));
             this.ButtonReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonReports.Location = new System.Drawing.Point(555, 555);
+            this.ButtonReports.Location = new System.Drawing.Point(676, 521);
+            this.ButtonReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonReports.Name = "ButtonReports";
-            this.ButtonReports.Size = new System.Drawing.Size(172, 48);
+            this.ButtonReports.Size = new System.Drawing.Size(129, 39);
             this.ButtonReports.TabIndex = 12;
             this.ButtonReports.Text = "DOCUMENTS";
             this.ButtonReports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -256,9 +265,10 @@
             this.ButtonValidate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonValidate.Image = ((System.Drawing.Image)(resources.GetObject("ButtonValidate.Image")));
             this.ButtonValidate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonValidate.Location = new System.Drawing.Point(733, 555);
+            this.ButtonValidate.Location = new System.Drawing.Point(810, 521);
+            this.ButtonValidate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonValidate.Name = "ButtonValidate";
-            this.ButtonValidate.Size = new System.Drawing.Size(155, 48);
+            this.ButtonValidate.Size = new System.Drawing.Size(116, 39);
             this.ButtonValidate.TabIndex = 11;
             this.ButtonValidate.Text = "VALIDAR";
             this.ButtonValidate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -271,9 +281,10 @@
             this.ButtonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDelete.Image")));
             this.ButtonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonDelete.Location = new System.Drawing.Point(342, 555);
+            this.ButtonDelete.Location = new System.Drawing.Point(516, 521);
+            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.Size = new System.Drawing.Size(155, 48);
+            this.ButtonDelete.Size = new System.Drawing.Size(116, 39);
             this.ButtonDelete.TabIndex = 4;
             this.ButtonDelete.Text = "ELIMINAR";
             this.ButtonDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -286,9 +297,10 @@
             this.ButtonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ButtonUpdate.Image")));
             this.ButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonUpdate.Location = new System.Drawing.Point(894, 555);
+            this.ButtonUpdate.Location = new System.Drawing.Point(930, 521);
+            this.ButtonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonUpdate.Name = "ButtonUpdate";
-            this.ButtonUpdate.Size = new System.Drawing.Size(155, 48);
+            this.ButtonUpdate.Size = new System.Drawing.Size(116, 39);
             this.ButtonUpdate.TabIndex = 3;
             this.ButtonUpdate.Text = "MODIFICAR";
             this.ButtonUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -301,9 +313,10 @@
             this.ButtonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonInsert.Image = ((System.Drawing.Image)(resources.GetObject("ButtonInsert.Image")));
             this.ButtonInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonInsert.Location = new System.Drawing.Point(1055, 555);
+            this.ButtonInsert.Location = new System.Drawing.Point(1051, 521);
+            this.ButtonInsert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonInsert.Name = "ButtonInsert";
-            this.ButtonInsert.Size = new System.Drawing.Size(155, 48);
+            this.ButtonInsert.Size = new System.Drawing.Size(116, 39);
             this.ButtonInsert.TabIndex = 2;
             this.ButtonInsert.Text = "AFEGIR";
             this.ButtonInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -314,19 +327,20 @@
             // 
             this.labelPartners.AutoSize = true;
             this.labelPartners.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPartners.Location = new System.Drawing.Point(921, 89);
+            this.labelPartners.Location = new System.Drawing.Point(691, 72);
+            this.labelPartners.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPartners.Name = "labelPartners";
-            this.labelPartners.Size = new System.Drawing.Size(56, 20);
+            this.labelPartners.Size = new System.Drawing.Size(46, 17);
             this.labelPartners.TabIndex = 13;
             this.labelPartners.Text = "Socis:";
             // 
             // PartnerList
             // 
             this.AcceptButton = this.ButtonFind;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ButtonExit;
-            this.ClientSize = new System.Drawing.Size(1222, 615);
+            this.ClientSize = new System.Drawing.Size(1176, 570);
             this.Controls.Add(this.labelPartners);
             this.Controls.Add(this.ButtonReports);
             this.Controls.Add(this.ButtonValidate);
@@ -342,6 +356,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGVPartners);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PartnerList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Llistat de socis";

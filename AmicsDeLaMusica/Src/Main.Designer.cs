@@ -40,9 +40,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::AmicsDeLaMusica.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(455, 399);
+            this.pictureBox1.Size = new System.Drawing.Size(341, 324);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -51,10 +52,10 @@
             // 
             this.buttonPartners.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonPartners.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPartners.Location = new System.Drawing.Point(12, 487);
+            this.buttonPartners.Location = new System.Drawing.Point(9, 396);
             this.buttonPartners.Margin = new System.Windows.Forms.Padding(0);
             this.buttonPartners.Name = "buttonPartners";
-            this.buttonPartners.Size = new System.Drawing.Size(455, 64);
+            this.buttonPartners.Size = new System.Drawing.Size(341, 52);
             this.buttonPartners.TabIndex = 1;
             this.buttonPartners.Text = "SOCIS";
             this.buttonPartners.UseVisualStyleBackColor = true;
@@ -64,10 +65,10 @@
             // 
             this.buttonMusicians.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonMusicians.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMusicians.Location = new System.Drawing.Point(12, 417);
+            this.buttonMusicians.Location = new System.Drawing.Point(9, 339);
             this.buttonMusicians.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMusicians.Name = "buttonMusicians";
-            this.buttonMusicians.Size = new System.Drawing.Size(455, 64);
+            this.buttonMusicians.Size = new System.Drawing.Size(341, 52);
             this.buttonMusicians.TabIndex = 2;
             this.buttonMusicians.Text = "MÚSICS";
             this.buttonMusicians.UseVisualStyleBackColor = true;
@@ -77,10 +78,10 @@
             // 
             this.buttonCollaborator.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCollaborator.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCollaborator.Location = new System.Drawing.Point(12, 557);
+            this.buttonCollaborator.Location = new System.Drawing.Point(9, 453);
             this.buttonCollaborator.Margin = new System.Windows.Forms.Padding(0);
             this.buttonCollaborator.Name = "buttonCollaborator";
-            this.buttonCollaborator.Size = new System.Drawing.Size(455, 64);
+            this.buttonCollaborator.Size = new System.Drawing.Size(341, 52);
             this.buttonCollaborator.TabIndex = 3;
             this.buttonCollaborator.Text = "COL·LABORADORS";
             this.buttonCollaborator.UseVisualStyleBackColor = true;
@@ -88,19 +89,21 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(479, 633);
+            this.ClientSize = new System.Drawing.Size(359, 514);
             this.Controls.Add(this.buttonCollaborator);
             this.Controls.Add(this.buttonMusicians);
             this.Controls.Add(this.buttonPartners);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A.C. Amics de la Música";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
