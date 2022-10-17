@@ -2,15 +2,12 @@
 
 namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 {
-    interface IPartnerRepository
+    public interface IPartnerRepository
     {
 
-        Partner Find(Partner pPartner);
-        bool Exists(Partner pPartner);
         IEnumerable<Partner> FindAll(Partner pPartner);
         int GetNextId();
 
-        bool HasGap();
         IEnumerable<Partner> FindAllWithoutResponsibleMusician();
         Partner MaxPartner();
 

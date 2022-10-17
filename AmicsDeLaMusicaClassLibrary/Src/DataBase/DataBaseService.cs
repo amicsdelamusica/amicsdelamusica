@@ -3,7 +3,7 @@ using System.IO;
 
 namespace AmicsDeLaMusicaClassLibrary.Src.DataBase
 {
-    class DataBaseService
+    public class DataBaseService
     {
 
         public SQLiteConnection connection;

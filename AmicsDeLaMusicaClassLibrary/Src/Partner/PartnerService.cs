@@ -109,7 +109,8 @@ namespace AmicsDeLaMusicaClassLibrary.src.Partner
 
         public bool HasGap()
         {
-            return _repository.HasGap();
+            return GetNextId() - 1 != MaxPartner().Id;
+            
         }
 
         public Src.Partner.Partner MaxPartner()
