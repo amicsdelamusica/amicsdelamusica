@@ -34,5 +34,10 @@ namespace AmicsDeLaMusica
         {
             AppContainer.GetInstance().GetInstance<PartnerList>().Show();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            Text += $" - {ProductVersion}";
+        }
     }
 }

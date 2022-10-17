@@ -211,7 +211,7 @@ namespace AmicsDeLaMusica.Src.Partner
                     _gapPartnerID = _partnerService.GetNextId();
 
                     _confirmationMessage = "N'hi ha llocs en blanc entre els socis.\n\n";
-                    _confirmationMessage += $"Vols moure el soci {_lastPartner.ToString()} al lloc {_gapPartnerID}?";
+                    _confirmationMessage += $"Vols moure el soci {_lastPartner} al lloc {_gapPartnerID}?";
 
                     _result = MessageBox.Show(
                       _confirmationMessage,

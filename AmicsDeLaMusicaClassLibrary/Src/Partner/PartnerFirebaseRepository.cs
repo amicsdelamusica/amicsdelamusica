@@ -1,6 +1,7 @@
 ﻿using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,19 +11,29 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 {
     public class PartnerFirebaseRepository : IPartnerRepository
     {
+        private const string FIREBASE_CONFIGURATION_FILE = "firebase.json";
+        private const string PROJECT_ID = "amicsdelamusica-df31d";
+
         private const string PARTNERS_PATH = "partners";
-        FirestoreDb db;
-        CollectionReference collection;
+
+        private const string ID_FIELD_NAME = "Id";
+        private const string RESPONSIBLE_MUSICIAN_FIELD_NAME = "ResponsibleMusician";
+        private const string CITY_FIELD_NAME = "City";
+        private const string STREET_FIELD_NAME = "Street";
+
+        readonly CollectionReference collection;
       
         public PartnerFirebaseRepository() 
         {
 
-            StreamReader r = new StreamReader("firebase.json");
+            FirestoreDb db;
+
+            StreamReader r = new StreamReader(FIREBASE_CONFIGURATION_FILE);
             string json = r.ReadToEnd();
 
             db = new FirestoreDbBuilder
             {
-                ProjectId = "amicsdelamusica-df31d",
+                ProjectId = PROJECT_ID,
                 JsonCredentials = json
             }.Build();
 
@@ -34,17 +45,9 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         public void Delete(Partner pPartner)
         {
-            throw new NotImplementedException();
-        }
+            DocumentReference documentReference = FindDocumentReferenceByParnerId(pPartner.Id);
 
-        public bool Exists(Partner pPartner)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Partner Find(Partner pPartner)
-        {
-            throw new NotImplementedException();
+           var _ = documentReference.DeleteAsync().Result;
         }
 
         public IEnumerable<Partner> FindAll(Partner pPartner)
@@ -53,10 +56,8 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
             IEnumerable<Partner> results;
             
             QuerySnapshot snapshot = collection.
-                OrderBy("Id").
+                OrderBy(ID_FIELD_NAME).
                 GetSnapshotAsync().Result;
-
-
 
             results = snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>()).ToList();
 
@@ -73,14 +74,21 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         public IEnumerable<Partner> FindAllWithoutResponsibleMusician()
         {
-            throw new NotImplementedException();
+
+            QuerySnapshot snapshot = collection.
+                OrderBy(ID_FIELD_NAME).
+                WhereEqualTo(RESPONSIBLE_MUSICIAN_FIELD_NAME, string.Empty).
+                GetSnapshotAsync().Result;
+
+            return snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>()).ToList();
+
         }
 
         public IEnumerable<string> GetCities()
         {
 
             QuerySnapshot snapshot = collection.
-                Select("City").
+                Select(CITY_FIELD_NAME).
                 GetSnapshotAsync().Result;
 
             return snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>().City).Distinct().ToList();
@@ -91,8 +99,8 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
         {
             IEnumerable<int> ids;
             QuerySnapshot snapshot = collection.
-                Select("Id").
-                OrderBy("Id").
+                Select(ID_FIELD_NAME).
+                OrderBy(ID_FIELD_NAME).
                 GetSnapshotAsync().Result;
 
             ids = snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>().Id).Distinct().ToList();
@@ -103,25 +111,19 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
         public IEnumerable<string> GetResponsibleMusicians()
         {
 
-            CollectionReference partnerReference = db.Collection(PARTNERS_PATH);
-            QuerySnapshot snapshot = partnerReference.
-                Select("ResponsibleMusician").GetSnapshotAsync().Result;
+            QuerySnapshot snapshot = collection.
+                Select(RESPONSIBLE_MUSICIAN_FIELD_NAME).GetSnapshotAsync().Result;
 
             return snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>().ResponsibleMusician).Distinct().ToList();
         }
 
         public IEnumerable<string> GetStreets()
         {
-            CollectionReference partnerReference = db.Collection(PARTNERS_PATH);
-            QuerySnapshot snapshot = partnerReference.
-                Select("Street").GetSnapshotAsync().Result;
+ 
+            QuerySnapshot snapshot = collection.
+                Select(STREET_FIELD_NAME).GetSnapshotAsync().Result;
 
             return snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>().Street).Distinct().ToList();
-        }
-
-        public bool HasGap()
-        {
-            throw new NotImplementedException();
         }
 
         public void Insert(Partner pPartner)
@@ -131,17 +133,41 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
 
         public Partner MaxPartner()
         {
-            throw new NotImplementedException();
+            QuerySnapshot snapshot = collection.
+               OrderByDescending(ID_FIELD_NAME).
+               Limit(1).
+               GetSnapshotAsync().Result;
+
+            return snapshot.Documents.ToList().Select(doc => doc.ConvertTo<Partner>()).FirstOrDefault();
+        }
+
+        private DocumentReference FindDocumentReferenceByParnerId(int id) 
+        { 
+            string documentId;
+
+            QuerySnapshot snapshot = collection.
+              WhereEqualTo(ID_FIELD_NAME, id).
+              Limit(1).
+              GetSnapshotAsync().Result;
+
+            documentId = snapshot.Documents.FirstOrDefault().Id;
+
+            return collection.Document(documentId);
         }
 
         public void Update(Partner pPartner)
         {
-            throw new NotImplementedException();
+
+            DocumentReference documentReference = FindDocumentReferenceByParnerId(pPartner.Id);
+            var _ = documentReference.SetAsync(pPartner).Result;
+
         }
 
         public void UpdateID(Partner pPartner, int pNewID)
         {
-            throw new NotImplementedException();
+            DocumentReference documentReference = FindDocumentReferenceByParnerId(pPartner.Id);
+            pPartner.Id = pNewID;
+            var _ = documentReference.SetAsync(pPartner).Result;
         }
     }
 }

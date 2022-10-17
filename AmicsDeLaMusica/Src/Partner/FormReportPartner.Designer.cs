@@ -52,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 20);
+            this.label1.Size = new System.Drawing.Size(125, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Carta per als socis";
             // 
@@ -60,7 +60,7 @@
             // 
             this.TBLetterPath.Location = new System.Drawing.Point(169, 18);
             this.TBLetterPath.Name = "TBLetterPath";
-            this.TBLetterPath.Size = new System.Drawing.Size(389, 27);
+            this.TBLetterPath.Size = new System.Drawing.Size(389, 23);
             this.TBLetterPath.TabIndex = 1;
             // 
             // ButtonBrowseLetter
@@ -75,7 +75,8 @@
             // 
             // OFDLetter
             // 
-            this.OFDLetter.FileName = "openFileDialog1";
+            this.OFDLetter.FileName = "CARTASOCIS";
+            this.OFDLetter.Filter = "Arxius PDF|*.pdf";
             // 
             // ButtonReward
             // 
@@ -110,7 +111,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Data límit";
             // 
@@ -119,7 +120,7 @@
             this.DTPDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTPDueDate.Location = new System.Drawing.Point(169, 52);
             this.DTPDueDate.Name = "DTPDueDate";
-            this.DTPDueDate.Size = new System.Drawing.Size(180, 27);
+            this.DTPDueDate.Size = new System.Drawing.Size(180, 23);
             this.DTPDueDate.TabIndex = 6;
             // 
             // ButtonBrowseOutput
@@ -136,7 +137,7 @@
             // 
             this.TBOutputPath.Location = new System.Drawing.Point(169, 85);
             this.TBOutputPath.Name = "TBOutputPath";
-            this.TBOutputPath.Size = new System.Drawing.Size(389, 27);
+            this.TBOutputPath.Size = new System.Drawing.Size(389, 23);
             this.TBOutputPath.TabIndex = 8;
             // 
             // label3
@@ -144,7 +145,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 20);
+            this.label3.Size = new System.Drawing.Size(81, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Guardar en";
             // 
@@ -153,7 +154,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(355, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
+            this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Import";
             // 
@@ -162,7 +163,7 @@
             this.NumericAmount.DecimalPlaces = 2;
             this.NumericAmount.Location = new System.Drawing.Point(417, 52);
             this.NumericAmount.Name = "NumericAmount";
-            this.NumericAmount.Size = new System.Drawing.Size(82, 27);
+            this.NumericAmount.Size = new System.Drawing.Size(82, 23);
             this.NumericAmount.TabIndex = 11;
             this.NumericAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.NumericAmount.Value = new decimal(new int[] {
@@ -176,13 +177,13 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(505, 57);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 20);
+            this.label5.Size = new System.Drawing.Size(45, 17);
             this.label5.TabIndex = 12;
             this.label5.Text = "Euros";
             // 
             // FormReportPartner
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 175);
             this.Controls.Add(this.label5);

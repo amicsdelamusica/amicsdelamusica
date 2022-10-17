@@ -229,16 +229,6 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
             return _dbService.connection.Query<Partner>(GetSQLFindAllPartners(), pPartner);
         }
 
-        Partner IPartnerRepository.Find(Partner pPartner)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool IPartnerRepository.Exists(Partner pPartner)
-        {
-            throw new NotImplementedException();
-        }
-
         void IPartnerRepository.Insert(Partner pPartner)
         {
             _dbService.connection.Execute(GetInsertSQL(), pPartner);
@@ -277,11 +267,6 @@ namespace AmicsDeLaMusicaClassLibrary.Src.Partner
         public int GetNextId()
         {
             return _dbService.connection.Query<int>(GetNextIdSQL()).FirstOrDefault();
-        }
-
-        public bool HasGap()
-        {
-           return GetNextId() - 1 != MaxPartner().Id;
         }
 
         public IEnumerable<Partner> FindAllWithoutResponsibleMusician()
